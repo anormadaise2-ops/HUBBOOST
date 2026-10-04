@@ -1,0 +1,43 @@
+{
+  "name": "hubboost",
+  "version": "1.0.0",
+  "description": "HUBBOOST - Windows PC Optimizer",
+  "main": "main.js",
+  "author": "HUBBOOST",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.hubboost.app",
+    "productName": "HUBBOOST",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "main.js",
+      "HUBBOOST.bat",
+      "icon.ico",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

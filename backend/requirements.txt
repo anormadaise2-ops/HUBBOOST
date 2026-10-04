@@ -1,0 +1,10 @@
+﻿Flask
+Flask-Cors
+Flask-SQLAlchemy
+SQLAlchemy
+Authlib
+requests
+python-dotenv
+gunicorn
+Pillow
+PyInstaller

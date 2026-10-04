@@ -1,0 +1,86 @@
+# =========================
+
+# ENVIRONNEMENT
+
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+
+# PYTHON
+
+# =========================
+
+.venv/
+venv/
+env/
+**pycache**/
+*.py[cod]
+*.pyo
+*.pyd
+
+# =========================
+
+# BASE DE DONNÉES
+
+# =========================
+
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# =========================
+
+# NODE.JS / ELECTRON
+
+# =========================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+
+# BUILDS
+
+# =========================
+
+dist/
+build/
+release/
+out/
+
+# =========================
+
+# PYINSTALLER
+
+# =========================
+
+*.spec
+
+# =========================
+
+# IDE / ÉDITEURS
+
+# =========================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+
+# SYSTÈME
+
+# =========================
+
+.DS_Store
+Thumbs.db
+desktop.ini

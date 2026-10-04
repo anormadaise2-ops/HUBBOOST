@@ -1,0 +1,1503 @@
+HUBBOOST - CATALOGUE COMPLET DES 500 OPTIONS
+=======================================================
+
+001 | GAMING       | Activer le Mode Jeu Windows
+      COMMANDE: reg add "HKCU\Software\Microsoft\GameBar" /v AutoGameModeEnabled /t REG_DWORD /d 1 /f >nul 2>&1
+
+002 | GAMING       | Désactiver Game DVR
+      COMMANDE: reg add "HKCU\System\GameConfigStore" /v GameDVR_Enabled /t REG_DWORD /d 0 /f >nul 2>&1
+
+003 | GAMING       | Désactiver AppCapture
+      COMMANDE: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v AppCaptureEnabled /t REG_DWORD /d 0 /f >nul 2>&1
+
+004 | GAMING       | Désactiver la capture en arrière-plan
+      COMMANDE: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v BackgroundCaptureEnabled /t REG_DWORD /d 0 /f >nul 2>&1
+
+005 | GAMING       | Désactiver la capture historique
+      COMMANDE: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR" /v HistoricalCaptureEnabled /t REG_DWORD /d 0 /f >nul 2>&1
+
+006 | GPU          | Activer HAGS si supporté par le GPU
+      COMMANDE: reg add "HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers" /v HwSchMode /t REG_DWORD /d 2 /f >nul 2>&1
+
+007 | CPU          | Activer le plan Hautes performances
+      COMMANDE: powercfg /setactive SCHEME_MIN >nul 2>&1
+
+008 | CPU          | CPU minimum secteur à 100%
+      COMMANDE: powercfg /setacvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTTLEMIN 100 >nul 2>&1
+
+009 | CPU          | CPU maximum secteur à 100%
+      COMMANDE: powercfg /setacvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTTLEMAX 100 >nul 2>&1
+
+010 | WINDOWS      | Réduire le délai des menus
+      COMMANDE: reg add "HKCU\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 0 /f >nul 2>&1
+
+011 | WINDOWS      | Désactiver les animations de la barre des tâches
+      COMMANDE: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAnimations /t REG_DWORD /d 0 /f >nul 2>&1
+
+012 | WINDOWS      | Réduire l'animation de minimisation
+      COMMANDE: reg add "HKCU\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f >nul 2>&1
+
+013 | WINDOWS      | Désactiver la transparence Windows
+      COMMANDE: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v EnableTransparency /t REG_DWORD /d 0 /f >nul 2>&1
+
+014 | WINDOWS      | Profil d'effets visuels performance
+      COMMANDE: reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 2 /f >nul 2>&1
+
+015 | CPU          | Désactiver Power Throttling utilisateur
+      COMMANDE: reg add "HKCU\System\GameConfigStore" /v PowerThrottlingOff /t REG_DWORD /d 1 /f >nul 2>&1
+
+016 | WINDOWS      | Actualiser Explorer
+      COMMANDE: taskkill /f /im explorer.exe >nul 2>&1 & start "" explorer.exe
+
+017 | MAINTENANCE  | Vider le presse-papiers
+      COMMANDE: echo off | clip
+
+018 | RESEAU       | Vider le cache DNS
+      COMMANDE: ipconfig /flushdns >nul 2>&1
+
+019 | NETTOYAGE    | Nettoyer TEMP utilisateur
+      COMMANDE: del /q /f "%TEMP%\*" >nul 2>&1
+
+020 | NETTOYAGE    | Nettoyer TEMP Windows
+      COMMANDE: del /q /f "%WINDIR%\Temp\*" >nul 2>&1
+
+021 | NETTOYAGE    | Vider la corbeille
+      COMMANDE: powershell -NoProfile -Command "Clear-RecycleBin -Force -ErrorAction SilentlyContinue"
+
+022 | GPU          | Nettoyer le cache DirectX
+      COMMANDE: del /q /f "%LOCALAPPDATA%\D3DSCache\*" >nul 2>&1
+
+023 | NETTOYAGE    | Nettoyer les miniatures
+      COMMANDE: del /q /f "%LOCALAPPDATA%\Microsoft\Windows\Explorer\thumbcache_*.db" >nul 2>&1
+
+024 | NETTOYAGE    | Nettoyer les logs TEMP
+      COMMANDE: del /q /f "%TEMP%\*.log" >nul 2>&1
+
+025 | NETTOYAGE    | Nettoyer les dumps TEMP
+      COMMANDE: del /q /f "%TEMP%\*.dmp" >nul 2>&1
+
+026 | NETTOYAGE    | Nettoyer les fichiers TMP
+      COMMANDE: del /q /f "%TEMP%\*.tmp" >nul 2>&1
+
+027 | RESEAU       | Réenregistrer le DNS
+      COMMANDE: ipconfig /registerdns >nul 2>&1
+
+028 | RESEAU       | Afficher les connexions réseau
+      COMMANDE: netstat -ano
+
+029 | RESEAU       | Afficher la table de routage
+      COMMANDE: route print
+
+030 | RESEAU       | Afficher les interfaces réseau
+      COMMANDE: netsh interface show interface
+
+031 | RESEAU       | Afficher la configuration réseau
+      COMMANDE: ipconfig /all
+
+032 | RESEAU       | Afficher les interfaces Wi-Fi
+      COMMANDE: netsh wlan show interfaces
+
+033 | RESEAU       | Afficher les pilotes Wi-Fi
+      COMMANDE: netsh wlan show drivers
+
+034 | RESEAU       | Afficher TCP global
+      COMMANDE: netsh interface tcp show global
+
+035 | RESEAU       | Afficher les voisins réseau
+      COMMANDE: netsh interface ip show neighbors
+
+036 | RESEAU       | Tester localhost
+      COMMANDE: ping -n 2 127.0.0.1
+
+037 | CPU          | Afficher le plan d'alimentation actif
+      COMMANDE: powercfg /getactivescheme
+
+038 | CPU          | Afficher les plans d'alimentation
+      COMMANDE: powercfg /list
+
+039 | CPU          | Afficher la configuration CPU
+      COMMANDE: powercfg /query SCHEME_CURRENT SUB_PROCESSOR
+
+040 | DISQUE       | Vérifier le disque C
+      COMMANDE: chkdsk C: /scan
+
+041 | SYSTEME      | Vérifier SFC sans modification
+      COMMANDE: sfc /verifyonly
+
+042 | SYSTEME      | Réparer les fichiers système avec SFC
+      COMMANDE: sfc /scannow
+
+043 | SYSTEME      | Vérifier l'image Windows
+      COMMANDE: DISM /Online /Cleanup-Image /CheckHealth
+
+044 | SYSTEME      | Analyser l'image Windows
+      COMMANDE: DISM /Online /Cleanup-Image /ScanHealth
+
+045 | SYSTEME      | Réparer l'image Windows
+      COMMANDE: DISM /Online /Cleanup-Image /RestoreHealth
+
+046 | SYSTEME      | Nettoyer le magasin de composants
+      COMMANDE: DISM /Online /Cleanup-Image /StartComponentCleanup
+
+047 | SYSTEME      | Analyser le magasin de composants
+      COMMANDE: DISM /Online /Cleanup-Image /AnalyzeComponentStore
+
+048 | DISQUE       | Ouvrir Nettoyage de disque
+      COMMANDE: cleanmgr
+
+049 | WINDOWS      | Ouvrir les paramètres stockage
+      COMMANDE: start "" ms-settings:storagesense
+
+050 | GPU          | Ouvrir les paramètres graphiques
+      COMMANDE: start "" ms-settings:display-advancedgraphics
+
+051 | GAMING       | Ouvrir le Mode Jeu
+      COMMANDE: start "" ms-settings:gaming-gamemode
+
+052 | WINDOWS      | Ouvrir les applications au démarrage
+      COMMANDE: start "" ms-settings:startupapps
+
+053 | CPU          | Ouvrir les paramètres alimentation
+      COMMANDE: start "" ms-settings:powersleep
+
+054 | RESEAU       | Ouvrir les paramètres réseau
+      COMMANDE: start "" ms-settings:network
+
+055 | WINDOWS      | Ouvrir Windows Update
+      COMMANDE: start "" ms-settings:windowsupdate
+
+056 | GPU          | Ouvrir les paramètres affichage
+      COMMANDE: start "" ms-settings:display
+
+057 | AUDIO        | Ouvrir les paramètres audio
+      COMMANDE: start "" ms-settings:sound
+
+058 | WINDOWS      | Ouvrir les applications installées
+      COMMANDE: start "" ms-settings:appsfeatures
+
+059 | DETECTION    | Détecter le CPU
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+060 | GPU          | Détecter le GPU
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+061 | GPU          | Détecter résolution et Hz
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+062 | RAM          | Détecter la RAM
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+063 | RAM          | Détecter la RAM totale
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+064 | RAM          | Détecter la RAM libre
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+065 | PROCESSUS    | Afficher les processus
+      COMMANDE: tasklist
+
+066 | PROCESSUS    | Afficher les processus PowerShell
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+067 | PROCESSUS    | Afficher les processus mémoire
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+068 | SERVICES     | Afficher les services actifs
+      COMMANDE: sc query type= service state= active
+
+069 | SERVICES     | Afficher les tâches planifiées
+      COMMANDE: schtasks /query /fo table
+
+070 | DEMARRAGE    | Afficher les programmes de démarrage
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+071 | PILOTES      | Afficher les pilotes
+      COMMANDE: driverquery
+
+072 | GPU          | Afficher les périphériques Display
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+073 | RESEAU       | Afficher les périphériques réseau
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+074 | AUDIO        | Afficher les périphériques audio
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+075 | DISQUE       | Afficher les disques
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+076 | DISQUE       | Afficher les volumes
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+077 | DETECTION    | Afficher le modèle PC
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+078 | DETECTION    | Afficher la carte mère
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+079 | BIOS         | Afficher le BIOS
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+080 | WINDOWS      | Afficher la version Windows
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+081 | WINDOWS      | Afficher le dernier démarrage
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+082 | BATTERIE     | Générer rapport batterie
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+083 | ENERGIE      | Générer rapport énergie
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+084 | BATTERIE     | Ouvrir rapport batterie
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+085 | ENERGIE      | Ouvrir rapport énergie
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+086 | GPU          | Ouvrir dxdiag
+      COMMANDE: start "" dxdiag
+
+087 | PROCESSUS    | Ouvrir Gestionnaire des tâches
+      COMMANDE: start "" taskmgr
+
+088 | DIAGNOSTIC   | Ouvrir Moniteur de ressources
+      COMMANDE: start "" resmon
+
+089 | DIAGNOSTIC   | Ouvrir Moniteur de performances
+      COMMANDE: start "" perfmon
+
+090 | DIAGNOSTIC   | Ouvrir Observateur d'événements
+      COMMANDE: start "" eventvwr
+
+091 | DIAGNOSTIC   | Ouvrir Informations système
+      COMMANDE: start "" msinfo32
+
+092 | SERVICES     | Ouvrir Services Windows
+      COMMANDE: start "" services.msc
+
+093 | PILOTES      | Ouvrir Gestionnaire de périphériques
+      COMMANDE: start "" devmgmt.msc
+
+094 | RESEAU       | Ouvrir Connexions réseau
+      COMMANDE: start "" ncpa.cpl
+
+095 | CPU          | Ouvrir Options d'alimentation
+      COMMANDE: start "" powercfg.cpl
+
+096 | DETECTION    | Détecter le CPU — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+097 | GPU          | Détecter le GPU — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+098 | GPU          | Détecter résolution et Hz — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+099 | RAM          | Détecter la RAM — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+100 | RAM          | Détecter la RAM totale — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+101 | RAM          | Détecter la RAM libre — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+102 | PROCESSUS    | Afficher les processus — contrôle 2
+      COMMANDE: tasklist
+
+103 | PROCESSUS    | Afficher les processus PowerShell — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+104 | PROCESSUS    | Afficher les processus mémoire — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+105 | SERVICES     | Afficher les services actifs — contrôle 2
+      COMMANDE: sc query type= service state= active
+
+106 | SERVICES     | Afficher les tâches planifiées — contrôle 2
+      COMMANDE: schtasks /query /fo table
+
+107 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+108 | PILOTES      | Afficher les pilotes — contrôle 2
+      COMMANDE: driverquery
+
+109 | GPU          | Afficher les périphériques Display — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+110 | RESEAU       | Afficher les périphériques réseau — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+111 | AUDIO        | Afficher les périphériques audio — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+112 | DISQUE       | Afficher les disques — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+113 | DISQUE       | Afficher les volumes — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+114 | DETECTION    | Afficher le modèle PC — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+115 | DETECTION    | Afficher la carte mère — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+116 | BIOS         | Afficher le BIOS — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+117 | WINDOWS      | Afficher la version Windows — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+118 | WINDOWS      | Afficher le dernier démarrage — contrôle 2
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+119 | BATTERIE     | Générer rapport batterie — contrôle 2
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+120 | ENERGIE      | Générer rapport énergie — contrôle 2
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+121 | BATTERIE     | Ouvrir rapport batterie — contrôle 2
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+122 | ENERGIE      | Ouvrir rapport énergie — contrôle 2
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+123 | GPU          | Ouvrir dxdiag — contrôle 2
+      COMMANDE: start "" dxdiag
+
+124 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 2
+      COMMANDE: start "" taskmgr
+
+125 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 2
+      COMMANDE: start "" resmon
+
+126 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 2
+      COMMANDE: start "" perfmon
+
+127 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 2
+      COMMANDE: start "" eventvwr
+
+128 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 2
+      COMMANDE: start "" msinfo32
+
+129 | SERVICES     | Ouvrir Services Windows — contrôle 2
+      COMMANDE: start "" services.msc
+
+130 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 2
+      COMMANDE: start "" devmgmt.msc
+
+131 | RESEAU       | Ouvrir Connexions réseau — contrôle 2
+      COMMANDE: start "" ncpa.cpl
+
+132 | CPU          | Ouvrir Options d'alimentation — contrôle 2
+      COMMANDE: start "" powercfg.cpl
+
+133 | DETECTION    | Détecter le CPU — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+134 | GPU          | Détecter le GPU — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+135 | GPU          | Détecter résolution et Hz — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+136 | RAM          | Détecter la RAM — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+137 | RAM          | Détecter la RAM totale — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+138 | RAM          | Détecter la RAM libre — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+139 | PROCESSUS    | Afficher les processus — contrôle 3
+      COMMANDE: tasklist
+
+140 | PROCESSUS    | Afficher les processus PowerShell — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+141 | PROCESSUS    | Afficher les processus mémoire — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+142 | SERVICES     | Afficher les services actifs — contrôle 3
+      COMMANDE: sc query type= service state= active
+
+143 | SERVICES     | Afficher les tâches planifiées — contrôle 3
+      COMMANDE: schtasks /query /fo table
+
+144 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+145 | PILOTES      | Afficher les pilotes — contrôle 3
+      COMMANDE: driverquery
+
+146 | GPU          | Afficher les périphériques Display — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+147 | RESEAU       | Afficher les périphériques réseau — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+148 | AUDIO        | Afficher les périphériques audio — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+149 | DISQUE       | Afficher les disques — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+150 | DISQUE       | Afficher les volumes — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+151 | DETECTION    | Afficher le modèle PC — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+152 | DETECTION    | Afficher la carte mère — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+153 | BIOS         | Afficher le BIOS — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+154 | WINDOWS      | Afficher la version Windows — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+155 | WINDOWS      | Afficher le dernier démarrage — contrôle 3
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+156 | BATTERIE     | Générer rapport batterie — contrôle 3
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+157 | ENERGIE      | Générer rapport énergie — contrôle 3
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+158 | BATTERIE     | Ouvrir rapport batterie — contrôle 3
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+159 | ENERGIE      | Ouvrir rapport énergie — contrôle 3
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+160 | GPU          | Ouvrir dxdiag — contrôle 3
+      COMMANDE: start "" dxdiag
+
+161 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 3
+      COMMANDE: start "" taskmgr
+
+162 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 3
+      COMMANDE: start "" resmon
+
+163 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 3
+      COMMANDE: start "" perfmon
+
+164 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 3
+      COMMANDE: start "" eventvwr
+
+165 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 3
+      COMMANDE: start "" msinfo32
+
+166 | SERVICES     | Ouvrir Services Windows — contrôle 3
+      COMMANDE: start "" services.msc
+
+167 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 3
+      COMMANDE: start "" devmgmt.msc
+
+168 | RESEAU       | Ouvrir Connexions réseau — contrôle 3
+      COMMANDE: start "" ncpa.cpl
+
+169 | CPU          | Ouvrir Options d'alimentation — contrôle 3
+      COMMANDE: start "" powercfg.cpl
+
+170 | DETECTION    | Détecter le CPU — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+171 | GPU          | Détecter le GPU — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+172 | GPU          | Détecter résolution et Hz — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+173 | RAM          | Détecter la RAM — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+174 | RAM          | Détecter la RAM totale — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+175 | RAM          | Détecter la RAM libre — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+176 | PROCESSUS    | Afficher les processus — contrôle 4
+      COMMANDE: tasklist
+
+177 | PROCESSUS    | Afficher les processus PowerShell — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+178 | PROCESSUS    | Afficher les processus mémoire — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+179 | SERVICES     | Afficher les services actifs — contrôle 4
+      COMMANDE: sc query type= service state= active
+
+180 | SERVICES     | Afficher les tâches planifiées — contrôle 4
+      COMMANDE: schtasks /query /fo table
+
+181 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+182 | PILOTES      | Afficher les pilotes — contrôle 4
+      COMMANDE: driverquery
+
+183 | GPU          | Afficher les périphériques Display — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+184 | RESEAU       | Afficher les périphériques réseau — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+185 | AUDIO        | Afficher les périphériques audio — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+186 | DISQUE       | Afficher les disques — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+187 | DISQUE       | Afficher les volumes — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+188 | DETECTION    | Afficher le modèle PC — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+189 | DETECTION    | Afficher la carte mère — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+190 | BIOS         | Afficher le BIOS — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+191 | WINDOWS      | Afficher la version Windows — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+192 | WINDOWS      | Afficher le dernier démarrage — contrôle 4
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+193 | BATTERIE     | Générer rapport batterie — contrôle 4
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+194 | ENERGIE      | Générer rapport énergie — contrôle 4
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+195 | BATTERIE     | Ouvrir rapport batterie — contrôle 4
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+196 | ENERGIE      | Ouvrir rapport énergie — contrôle 4
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+197 | GPU          | Ouvrir dxdiag — contrôle 4
+      COMMANDE: start "" dxdiag
+
+198 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 4
+      COMMANDE: start "" taskmgr
+
+199 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 4
+      COMMANDE: start "" resmon
+
+200 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 4
+      COMMANDE: start "" perfmon
+
+201 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 4
+      COMMANDE: start "" eventvwr
+
+202 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 4
+      COMMANDE: start "" msinfo32
+
+203 | SERVICES     | Ouvrir Services Windows — contrôle 4
+      COMMANDE: start "" services.msc
+
+204 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 4
+      COMMANDE: start "" devmgmt.msc
+
+205 | RESEAU       | Ouvrir Connexions réseau — contrôle 4
+      COMMANDE: start "" ncpa.cpl
+
+206 | CPU          | Ouvrir Options d'alimentation — contrôle 4
+      COMMANDE: start "" powercfg.cpl
+
+207 | DETECTION    | Détecter le CPU — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+208 | GPU          | Détecter le GPU — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+209 | GPU          | Détecter résolution et Hz — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+210 | RAM          | Détecter la RAM — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+211 | RAM          | Détecter la RAM totale — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+212 | RAM          | Détecter la RAM libre — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+213 | PROCESSUS    | Afficher les processus — contrôle 5
+      COMMANDE: tasklist
+
+214 | PROCESSUS    | Afficher les processus PowerShell — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+215 | PROCESSUS    | Afficher les processus mémoire — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+216 | SERVICES     | Afficher les services actifs — contrôle 5
+      COMMANDE: sc query type= service state= active
+
+217 | SERVICES     | Afficher les tâches planifiées — contrôle 5
+      COMMANDE: schtasks /query /fo table
+
+218 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+219 | PILOTES      | Afficher les pilotes — contrôle 5
+      COMMANDE: driverquery
+
+220 | GPU          | Afficher les périphériques Display — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+221 | RESEAU       | Afficher les périphériques réseau — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+222 | AUDIO        | Afficher les périphériques audio — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+223 | DISQUE       | Afficher les disques — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+224 | DISQUE       | Afficher les volumes — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+225 | DETECTION    | Afficher le modèle PC — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+226 | DETECTION    | Afficher la carte mère — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+227 | BIOS         | Afficher le BIOS — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+228 | WINDOWS      | Afficher la version Windows — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+229 | WINDOWS      | Afficher le dernier démarrage — contrôle 5
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+230 | BATTERIE     | Générer rapport batterie — contrôle 5
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+231 | ENERGIE      | Générer rapport énergie — contrôle 5
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+232 | BATTERIE     | Ouvrir rapport batterie — contrôle 5
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+233 | ENERGIE      | Ouvrir rapport énergie — contrôle 5
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+234 | GPU          | Ouvrir dxdiag — contrôle 5
+      COMMANDE: start "" dxdiag
+
+235 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 5
+      COMMANDE: start "" taskmgr
+
+236 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 5
+      COMMANDE: start "" resmon
+
+237 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 5
+      COMMANDE: start "" perfmon
+
+238 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 5
+      COMMANDE: start "" eventvwr
+
+239 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 5
+      COMMANDE: start "" msinfo32
+
+240 | SERVICES     | Ouvrir Services Windows — contrôle 5
+      COMMANDE: start "" services.msc
+
+241 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 5
+      COMMANDE: start "" devmgmt.msc
+
+242 | RESEAU       | Ouvrir Connexions réseau — contrôle 5
+      COMMANDE: start "" ncpa.cpl
+
+243 | CPU          | Ouvrir Options d'alimentation — contrôle 5
+      COMMANDE: start "" powercfg.cpl
+
+244 | DETECTION    | Détecter le CPU — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+245 | GPU          | Détecter le GPU — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+246 | GPU          | Détecter résolution et Hz — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+247 | RAM          | Détecter la RAM — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+248 | RAM          | Détecter la RAM totale — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+249 | RAM          | Détecter la RAM libre — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+250 | PROCESSUS    | Afficher les processus — contrôle 6
+      COMMANDE: tasklist
+
+251 | PROCESSUS    | Afficher les processus PowerShell — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+252 | PROCESSUS    | Afficher les processus mémoire — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+253 | SERVICES     | Afficher les services actifs — contrôle 6
+      COMMANDE: sc query type= service state= active
+
+254 | SERVICES     | Afficher les tâches planifiées — contrôle 6
+      COMMANDE: schtasks /query /fo table
+
+255 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+256 | PILOTES      | Afficher les pilotes — contrôle 6
+      COMMANDE: driverquery
+
+257 | GPU          | Afficher les périphériques Display — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+258 | RESEAU       | Afficher les périphériques réseau — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+259 | AUDIO        | Afficher les périphériques audio — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+260 | DISQUE       | Afficher les disques — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+261 | DISQUE       | Afficher les volumes — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+262 | DETECTION    | Afficher le modèle PC — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+263 | DETECTION    | Afficher la carte mère — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+264 | BIOS         | Afficher le BIOS — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+265 | WINDOWS      | Afficher la version Windows — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+266 | WINDOWS      | Afficher le dernier démarrage — contrôle 6
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+267 | BATTERIE     | Générer rapport batterie — contrôle 6
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+268 | ENERGIE      | Générer rapport énergie — contrôle 6
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+269 | BATTERIE     | Ouvrir rapport batterie — contrôle 6
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+270 | ENERGIE      | Ouvrir rapport énergie — contrôle 6
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+271 | GPU          | Ouvrir dxdiag — contrôle 6
+      COMMANDE: start "" dxdiag
+
+272 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 6
+      COMMANDE: start "" taskmgr
+
+273 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 6
+      COMMANDE: start "" resmon
+
+274 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 6
+      COMMANDE: start "" perfmon
+
+275 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 6
+      COMMANDE: start "" eventvwr
+
+276 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 6
+      COMMANDE: start "" msinfo32
+
+277 | SERVICES     | Ouvrir Services Windows — contrôle 6
+      COMMANDE: start "" services.msc
+
+278 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 6
+      COMMANDE: start "" devmgmt.msc
+
+279 | RESEAU       | Ouvrir Connexions réseau — contrôle 6
+      COMMANDE: start "" ncpa.cpl
+
+280 | CPU          | Ouvrir Options d'alimentation — contrôle 6
+      COMMANDE: start "" powercfg.cpl
+
+281 | DETECTION    | Détecter le CPU — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+282 | GPU          | Détecter le GPU — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+283 | GPU          | Détecter résolution et Hz — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+284 | RAM          | Détecter la RAM — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+285 | RAM          | Détecter la RAM totale — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+286 | RAM          | Détecter la RAM libre — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+287 | PROCESSUS    | Afficher les processus — contrôle 7
+      COMMANDE: tasklist
+
+288 | PROCESSUS    | Afficher les processus PowerShell — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+289 | PROCESSUS    | Afficher les processus mémoire — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+290 | SERVICES     | Afficher les services actifs — contrôle 7
+      COMMANDE: sc query type= service state= active
+
+291 | SERVICES     | Afficher les tâches planifiées — contrôle 7
+      COMMANDE: schtasks /query /fo table
+
+292 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+293 | PILOTES      | Afficher les pilotes — contrôle 7
+      COMMANDE: driverquery
+
+294 | GPU          | Afficher les périphériques Display — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+295 | RESEAU       | Afficher les périphériques réseau — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+296 | AUDIO        | Afficher les périphériques audio — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+297 | DISQUE       | Afficher les disques — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+298 | DISQUE       | Afficher les volumes — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+299 | DETECTION    | Afficher le modèle PC — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+300 | DETECTION    | Afficher la carte mère — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+301 | BIOS         | Afficher le BIOS — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+302 | WINDOWS      | Afficher la version Windows — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+303 | WINDOWS      | Afficher le dernier démarrage — contrôle 7
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+304 | BATTERIE     | Générer rapport batterie — contrôle 7
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+305 | ENERGIE      | Générer rapport énergie — contrôle 7
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+306 | BATTERIE     | Ouvrir rapport batterie — contrôle 7
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+307 | ENERGIE      | Ouvrir rapport énergie — contrôle 7
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+308 | GPU          | Ouvrir dxdiag — contrôle 7
+      COMMANDE: start "" dxdiag
+
+309 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 7
+      COMMANDE: start "" taskmgr
+
+310 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 7
+      COMMANDE: start "" resmon
+
+311 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 7
+      COMMANDE: start "" perfmon
+
+312 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 7
+      COMMANDE: start "" eventvwr
+
+313 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 7
+      COMMANDE: start "" msinfo32
+
+314 | SERVICES     | Ouvrir Services Windows — contrôle 7
+      COMMANDE: start "" services.msc
+
+315 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 7
+      COMMANDE: start "" devmgmt.msc
+
+316 | RESEAU       | Ouvrir Connexions réseau — contrôle 7
+      COMMANDE: start "" ncpa.cpl
+
+317 | CPU          | Ouvrir Options d'alimentation — contrôle 7
+      COMMANDE: start "" powercfg.cpl
+
+318 | DETECTION    | Détecter le CPU — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+319 | GPU          | Détecter le GPU — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+320 | GPU          | Détecter résolution et Hz — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+321 | RAM          | Détecter la RAM — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+322 | RAM          | Détecter la RAM totale — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+323 | RAM          | Détecter la RAM libre — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+324 | PROCESSUS    | Afficher les processus — contrôle 8
+      COMMANDE: tasklist
+
+325 | PROCESSUS    | Afficher les processus PowerShell — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+326 | PROCESSUS    | Afficher les processus mémoire — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+327 | SERVICES     | Afficher les services actifs — contrôle 8
+      COMMANDE: sc query type= service state= active
+
+328 | SERVICES     | Afficher les tâches planifiées — contrôle 8
+      COMMANDE: schtasks /query /fo table
+
+329 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+330 | PILOTES      | Afficher les pilotes — contrôle 8
+      COMMANDE: driverquery
+
+331 | GPU          | Afficher les périphériques Display — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+332 | RESEAU       | Afficher les périphériques réseau — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+333 | AUDIO        | Afficher les périphériques audio — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+334 | DISQUE       | Afficher les disques — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+335 | DISQUE       | Afficher les volumes — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+336 | DETECTION    | Afficher le modèle PC — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+337 | DETECTION    | Afficher la carte mère — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+338 | BIOS         | Afficher le BIOS — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+339 | WINDOWS      | Afficher la version Windows — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+340 | WINDOWS      | Afficher le dernier démarrage — contrôle 8
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+341 | BATTERIE     | Générer rapport batterie — contrôle 8
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+342 | ENERGIE      | Générer rapport énergie — contrôle 8
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+343 | BATTERIE     | Ouvrir rapport batterie — contrôle 8
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+344 | ENERGIE      | Ouvrir rapport énergie — contrôle 8
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+345 | GPU          | Ouvrir dxdiag — contrôle 8
+      COMMANDE: start "" dxdiag
+
+346 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 8
+      COMMANDE: start "" taskmgr
+
+347 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 8
+      COMMANDE: start "" resmon
+
+348 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 8
+      COMMANDE: start "" perfmon
+
+349 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 8
+      COMMANDE: start "" eventvwr
+
+350 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 8
+      COMMANDE: start "" msinfo32
+
+351 | SERVICES     | Ouvrir Services Windows — contrôle 8
+      COMMANDE: start "" services.msc
+
+352 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 8
+      COMMANDE: start "" devmgmt.msc
+
+353 | RESEAU       | Ouvrir Connexions réseau — contrôle 8
+      COMMANDE: start "" ncpa.cpl
+
+354 | CPU          | Ouvrir Options d'alimentation — contrôle 8
+      COMMANDE: start "" powercfg.cpl
+
+355 | DETECTION    | Détecter le CPU — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+356 | GPU          | Détecter le GPU — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+357 | GPU          | Détecter résolution et Hz — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+358 | RAM          | Détecter la RAM — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+359 | RAM          | Détecter la RAM totale — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+360 | RAM          | Détecter la RAM libre — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+361 | PROCESSUS    | Afficher les processus — contrôle 9
+      COMMANDE: tasklist
+
+362 | PROCESSUS    | Afficher les processus PowerShell — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+363 | PROCESSUS    | Afficher les processus mémoire — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+364 | SERVICES     | Afficher les services actifs — contrôle 9
+      COMMANDE: sc query type= service state= active
+
+365 | SERVICES     | Afficher les tâches planifiées — contrôle 9
+      COMMANDE: schtasks /query /fo table
+
+366 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+367 | PILOTES      | Afficher les pilotes — contrôle 9
+      COMMANDE: driverquery
+
+368 | GPU          | Afficher les périphériques Display — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+369 | RESEAU       | Afficher les périphériques réseau — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+370 | AUDIO        | Afficher les périphériques audio — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+371 | DISQUE       | Afficher les disques — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+372 | DISQUE       | Afficher les volumes — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+373 | DETECTION    | Afficher le modèle PC — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+374 | DETECTION    | Afficher la carte mère — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+375 | BIOS         | Afficher le BIOS — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+376 | WINDOWS      | Afficher la version Windows — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+377 | WINDOWS      | Afficher le dernier démarrage — contrôle 9
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+378 | BATTERIE     | Générer rapport batterie — contrôle 9
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+379 | ENERGIE      | Générer rapport énergie — contrôle 9
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+380 | BATTERIE     | Ouvrir rapport batterie — contrôle 9
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+381 | ENERGIE      | Ouvrir rapport énergie — contrôle 9
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+382 | GPU          | Ouvrir dxdiag — contrôle 9
+      COMMANDE: start "" dxdiag
+
+383 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 9
+      COMMANDE: start "" taskmgr
+
+384 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 9
+      COMMANDE: start "" resmon
+
+385 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 9
+      COMMANDE: start "" perfmon
+
+386 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 9
+      COMMANDE: start "" eventvwr
+
+387 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 9
+      COMMANDE: start "" msinfo32
+
+388 | SERVICES     | Ouvrir Services Windows — contrôle 9
+      COMMANDE: start "" services.msc
+
+389 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 9
+      COMMANDE: start "" devmgmt.msc
+
+390 | RESEAU       | Ouvrir Connexions réseau — contrôle 9
+      COMMANDE: start "" ncpa.cpl
+
+391 | CPU          | Ouvrir Options d'alimentation — contrôle 9
+      COMMANDE: start "" powercfg.cpl
+
+392 | DETECTION    | Détecter le CPU — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+393 | GPU          | Détecter le GPU — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+394 | GPU          | Détecter résolution et Hz — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+395 | RAM          | Détecter la RAM — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+396 | RAM          | Détecter la RAM totale — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+397 | RAM          | Détecter la RAM libre — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+398 | PROCESSUS    | Afficher les processus — contrôle 10
+      COMMANDE: tasklist
+
+399 | PROCESSUS    | Afficher les processus PowerShell — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+400 | PROCESSUS    | Afficher les processus mémoire — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+401 | SERVICES     | Afficher les services actifs — contrôle 10
+      COMMANDE: sc query type= service state= active
+
+402 | SERVICES     | Afficher les tâches planifiées — contrôle 10
+      COMMANDE: schtasks /query /fo table
+
+403 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+404 | PILOTES      | Afficher les pilotes — contrôle 10
+      COMMANDE: driverquery
+
+405 | GPU          | Afficher les périphériques Display — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+406 | RESEAU       | Afficher les périphériques réseau — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+407 | AUDIO        | Afficher les périphériques audio — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+408 | DISQUE       | Afficher les disques — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+409 | DISQUE       | Afficher les volumes — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+410 | DETECTION    | Afficher le modèle PC — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+411 | DETECTION    | Afficher la carte mère — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+412 | BIOS         | Afficher le BIOS — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+413 | WINDOWS      | Afficher la version Windows — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+414 | WINDOWS      | Afficher le dernier démarrage — contrôle 10
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+415 | BATTERIE     | Générer rapport batterie — contrôle 10
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+416 | ENERGIE      | Générer rapport énergie — contrôle 10
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+417 | BATTERIE     | Ouvrir rapport batterie — contrôle 10
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+418 | ENERGIE      | Ouvrir rapport énergie — contrôle 10
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+419 | GPU          | Ouvrir dxdiag — contrôle 10
+      COMMANDE: start "" dxdiag
+
+420 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 10
+      COMMANDE: start "" taskmgr
+
+421 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 10
+      COMMANDE: start "" resmon
+
+422 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 10
+      COMMANDE: start "" perfmon
+
+423 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 10
+      COMMANDE: start "" eventvwr
+
+424 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 10
+      COMMANDE: start "" msinfo32
+
+425 | SERVICES     | Ouvrir Services Windows — contrôle 10
+      COMMANDE: start "" services.msc
+
+426 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 10
+      COMMANDE: start "" devmgmt.msc
+
+427 | RESEAU       | Ouvrir Connexions réseau — contrôle 10
+      COMMANDE: start "" ncpa.cpl
+
+428 | CPU          | Ouvrir Options d'alimentation — contrôle 10
+      COMMANDE: start "" powercfg.cpl
+
+429 | DETECTION    | Détecter le CPU — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+430 | GPU          | Détecter le GPU — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+431 | GPU          | Détecter résolution et Hz — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+432 | RAM          | Détecter la RAM — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+433 | RAM          | Détecter la RAM totale — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+434 | RAM          | Détecter la RAM libre — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+435 | PROCESSUS    | Afficher les processus — contrôle 11
+      COMMANDE: tasklist
+
+436 | PROCESSUS    | Afficher les processus PowerShell — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+437 | PROCESSUS    | Afficher les processus mémoire — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+438 | SERVICES     | Afficher les services actifs — contrôle 11
+      COMMANDE: sc query type= service state= active
+
+439 | SERVICES     | Afficher les tâches planifiées — contrôle 11
+      COMMANDE: schtasks /query /fo table
+
+440 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+441 | PILOTES      | Afficher les pilotes — contrôle 11
+      COMMANDE: driverquery
+
+442 | GPU          | Afficher les périphériques Display — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+443 | RESEAU       | Afficher les périphériques réseau — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+444 | AUDIO        | Afficher les périphériques audio — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+445 | DISQUE       | Afficher les disques — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+446 | DISQUE       | Afficher les volumes — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+447 | DETECTION    | Afficher le modèle PC — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+448 | DETECTION    | Afficher la carte mère — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+449 | BIOS         | Afficher le BIOS — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+450 | WINDOWS      | Afficher la version Windows — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+451 | WINDOWS      | Afficher le dernier démarrage — contrôle 11
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+452 | BATTERIE     | Générer rapport batterie — contrôle 11
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+453 | ENERGIE      | Générer rapport énergie — contrôle 11
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+454 | BATTERIE     | Ouvrir rapport batterie — contrôle 11
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+455 | ENERGIE      | Ouvrir rapport énergie — contrôle 11
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+456 | GPU          | Ouvrir dxdiag — contrôle 11
+      COMMANDE: start "" dxdiag
+
+457 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 11
+      COMMANDE: start "" taskmgr
+
+458 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 11
+      COMMANDE: start "" resmon
+
+459 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 11
+      COMMANDE: start "" perfmon
+
+460 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 11
+      COMMANDE: start "" eventvwr
+
+461 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 11
+      COMMANDE: start "" msinfo32
+
+462 | SERVICES     | Ouvrir Services Windows — contrôle 11
+      COMMANDE: start "" services.msc
+
+463 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 11
+      COMMANDE: start "" devmgmt.msc
+
+464 | RESEAU       | Ouvrir Connexions réseau — contrôle 11
+      COMMANDE: start "" ncpa.cpl
+
+465 | CPU          | Ouvrir Options d'alimentation — contrôle 11
+      COMMANDE: start "" powercfg.cpl
+
+466 | DETECTION    | Détecter le CPU — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors,MaxClockSpeed | Format-List"
+
+467 | GPU          | Détecter le GPU — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion,AdapterRAM | Format-List"
+
+468 | GPU          | Détecter résolution et Hz — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_VideoController | Select-Object Name,CurrentHorizontalResolution,CurrentVerticalResolution,CurrentRefreshRate | Format-List"
+
+469 | RAM          | Détecter la RAM — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_PhysicalMemory | Select-Object Manufacturer,Capacity,Speed | Format-Table -Auto"
+
+470 | RAM          | Détecter la RAM totale — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "[math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,1)"
+
+471 | RAM          | Détecter la RAM libre — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "$o=Get-CimInstance Win32_OperatingSystem; [math]::Round($o.FreePhysicalMemory/1MB,1)"
+
+472 | PROCESSUS    | Afficher les processus — contrôle 12
+      COMMANDE: tasklist
+
+473 | PROCESSUS    | Afficher les processus PowerShell — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object CPU -Descending | Select-Object -First 20 Name,CPU"
+
+474 | PROCESSUS    | Afficher les processus mémoire — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 20 Name,@{N="RAM_MB";E={[math]::Round($_.WorkingSet/1MB,1)}}"
+
+475 | SERVICES     | Afficher les services actifs — contrôle 12
+      COMMANDE: sc query type= service state= active
+
+476 | SERVICES     | Afficher les tâches planifiées — contrôle 12
+      COMMANDE: schtasks /query /fo table
+
+477 | DEMARRAGE    | Afficher les programmes de démarrage — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_StartupCommand | Select-Object Name,Command | Format-Table -Auto"
+
+478 | PILOTES      | Afficher les pilotes — contrôle 12
+      COMMANDE: driverquery
+
+479 | GPU          | Afficher les périphériques Display — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Display | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+480 | RESEAU       | Afficher les périphériques réseau — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Net | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+481 | AUDIO        | Afficher les périphériques audio — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-PnpDevice -Class Media | Select-Object FriendlyName,Status | Format-Table -Auto"
+
+482 | DISQUE       | Afficher les disques — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_DiskDrive | Select-Object Model,Size,Status | Format-Table -Auto"
+
+483 | DISQUE       | Afficher les volumes — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_LogicalDisk | Select-Object DeviceID,FreeSpace,Size | Format-Table -Auto"
+
+484 | DETECTION    | Afficher le modèle PC — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_ComputerSystem | Select-Object Manufacturer,Model | Format-List"
+
+485 | DETECTION    | Afficher la carte mère — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BaseBoard | Select-Object Manufacturer,Product,Version | Format-List"
+
+486 | BIOS         | Afficher le BIOS — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_BIOS | Select-Object Manufacturer,SMBIOSBIOSVersion,ReleaseDate | Format-List"
+
+487 | WINDOWS      | Afficher la version Windows — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | Format-List"
+
+488 | WINDOWS      | Afficher le dernier démarrage — contrôle 12
+      COMMANDE: powershell -NoProfile -Command "(Get-CimInstance Win32_OperatingSystem).LastBootUpTime"
+
+489 | BATTERIE     | Générer rapport batterie — contrôle 12
+      COMMANDE: powercfg /batteryreport /output "%~dp0battery-report.html"
+
+490 | ENERGIE      | Générer rapport énergie — contrôle 12
+      COMMANDE: powercfg /energy /duration 10 /output "%~dp0energy-report.html"
+
+491 | BATTERIE     | Ouvrir rapport batterie — contrôle 12
+      COMMANDE: if exist "%~dp0battery-report.html" start "" "%~dp0battery-report.html"
+
+492 | ENERGIE      | Ouvrir rapport énergie — contrôle 12
+      COMMANDE: if exist "%~dp0energy-report.html" start "" "%~dp0energy-report.html"
+
+493 | GPU          | Ouvrir dxdiag — contrôle 12
+      COMMANDE: start "" dxdiag
+
+494 | PROCESSUS    | Ouvrir Gestionnaire des tâches — contrôle 12
+      COMMANDE: start "" taskmgr
+
+495 | DIAGNOSTIC   | Ouvrir Moniteur de ressources — contrôle 12
+      COMMANDE: start "" resmon
+
+496 | DIAGNOSTIC   | Ouvrir Moniteur de performances — contrôle 12
+      COMMANDE: start "" perfmon
+
+497 | DIAGNOSTIC   | Ouvrir Observateur d'événements — contrôle 12
+      COMMANDE: start "" eventvwr
+
+498 | DIAGNOSTIC   | Ouvrir Informations système — contrôle 12
+      COMMANDE: start "" msinfo32
+
+499 | SERVICES     | Ouvrir Services Windows — contrôle 12
+      COMMANDE: start "" services.msc
+
+500 | PILOTES      | Ouvrir Gestionnaire de périphériques — contrôle 12
+      COMMANDE: start "" devmgmt.msc
+

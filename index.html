@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="HUBBOOST - Optimiseur Windows avec 500 optimisations et communauté."
+    >
+
+    <meta
+        name="theme-color"
+        content="#050806"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>HUBBOOST — Windows Optimizer</title>
+
+    <link
+        rel="stylesheet"
+        href="main.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ⚡
+            </div>
+
+            <div>
+                HUB<span>BOOST</span>
+            </div>
+
+        </div>
+
+
+        <nav
+            style="
+                display:flex;
+                gap:18px;
+                align-items:center;
+                flex-wrap:wrap;
+            "
+        >
+
+            <a
+                href="#optimizations"
+                style="color:inherit;text-decoration:none;"
+            >
+                Optimisations
+            </a>
+
+            <a
+                href="#community"
+                style="color:inherit;text-decoration:none;"
+            >
+                Communauté
+            </a>
+
+            <a
+                href="#support"
+                style="color:inherit;text-decoration:none;"
+            >
+                Support
+            </a>
+
+        </nav>
+
+
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                gap:15px;
+                flex-wrap:wrap;
+            "
+        >
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                SYSTÈME EN LIGNE
+
+            </div>
+
+
+            <button
+                id="openAccount"
+                class="button-secondary"
+                type="button"
+            >
+                👤 Connexion
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="hero">
+
+        <h1>
+            BOOST
+            <span>YOUR PC.</span>
+        </h1>
+
+
+        <p>
+            HUBBOOST rassemble 500 actions Windows pour
+            améliorer, diagnostiquer et maintenir votre PC :
+            système, CPU, RAM, GPU, gaming, réseau,
+            stockage, sécurité et maintenance.
+        </p>
+
+
+        <div
+            style="
+                display:flex;
+                flex-wrap:wrap;
+                gap:12px;
+                margin-top:25px;
+            "
+        >
+
+            <a
+                href="HUBBOOST.bat"
+                class="button"
+                download="HUBBOOST.bat"
+            >
+                ⬇ Télécharger HUBBOOST
+            </a>
+
+
+            <a
+                href="HUBBOOST-500-CATALOGUE.txt"
+                class="button button-secondary"
+                download
+            >
+                📋 Catalogue 500 actions
+            </a>
+
+
+            <button
+                id="openSystem"
+                class="button-secondary"
+                type="button"
+            >
+                🖥️ Mon système
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATS
+         ===================================================== -->
+
+    <section>
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-label">Système</div>
+
+                <div
+                    id="systemOS"
+                    class="stat-value"
+                >
+                    Windows
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-label">Optimisations</div>
+
+                <div
+                    id="totalOptimizations"
+                    class="stat-value"
+                >
+                    500
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-label">Version</div>
+
+                <div
+                    id="hubVersion"
+                    class="stat-value"
+                >
+                    1.0
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-label">Statut</div>
+
+                <div
+                    id="systemStatus"
+                    class="stat-value"
+                >
+                    OK
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DOWNLOAD CENTER
+         ===================================================== -->
+
+    <section
+        class="optimization-card"
+        style="margin-bottom:16px;"
+    >
+
+        <div class="card-header">
+
+            <div>
+
+                <div class="card-category">
+                    DOWNLOAD CENTER
+                </div>
+
+                <h3>
+                    📥 Centre de téléchargement
+                </h3>
+
+            </div>
+
+            <div class="card-number">
+                HUB
+            </div>
+
+        </div>
+
+
+        <p>
+            Télécharge le programme HUBBOOST et son catalogue.
+            Le fichier BAT s'exécute directement sur Windows.
+        </p>
+
+
+        <div
+            style="
+                display:flex;
+                flex-wrap:wrap;
+                gap:10px;
+                margin-top:20px;
+            "
+        >
+
+            <a
+                href="HUBBOOST.bat"
+                download="HUBBOOST.bat"
+                class="button"
+            >
+                ⬇ HUBBOOST.bat
+            </a>
+
+
+            <a
+                href="HUBBOOST-500-CATALOGUE.txt"
+                download
+                class="button button-secondary"
+            >
+                📋 Catalogue
+            </a>
+
+
+            <button
+                id="checkDownload"
+                class="button-secondary"
+                type="button"
+            >
+                🔍 Vérifier les fichiers
+            </button>
+
+        </div>
+
+
+        <div
+            id="downloadStatus"
+            style="
+                margin-top:15px;
+                color:#8ca996;
+                font-size:13px;
+            "
+        >
+            Prêt à télécharger.
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMPATIBILITY
+         ===================================================== -->
+
+    <section
+        class="optimization-card"
+        style="margin-bottom:16px;"
+    >
+
+        <div class="card-header">
+
+            <div>
+
+                <div class="card-category">
+                    COMPATIBILITÉ
+                </div>
+
+                <h3>
+                    🛡️ Support système
+                </h3>
+
+            </div>
+
+            <div class="card-number">
+                OS
+            </div>
+
+        </div>
+
+
+        <p>
+            HUBBOOST est conçu principalement pour les versions
+            modernes de Windows. Certaines opérations peuvent
+            demander les droits administrateur.
+        </p>
+
+
+        <div
+            style="
+                display:flex;
+                flex-wrap:wrap;
+                gap:8px;
+                margin-top:18px;
+            "
+        >
+
+            <span class="category active">
+                Windows 11
+            </span>
+
+            <span class="category">
+                Windows 10
+            </span>
+
+            <span class="category">
+                PowerShell
+            </span>
+
+            <span class="category">
+                CMD
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         OPTIMIZATIONS
+         ===================================================== -->
+
+    <section id="optimizations">
+
+        <div class="search-container">
+
+            <input
+                id="searchInput"
+                class="search"
+                type="search"
+                placeholder="🔎 Rechercher parmi les 500 optimisations..."
+                autocomplete="off"
+                spellcheck="false"
+            >
+
+
+            <button
+                id="clearSearch"
+                class="button-secondary"
+                type="button"
+            >
+                Effacer
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CATEGORIES
+         ===================================================== -->
+
+    <section>
+
+        <div class="categories">
+
+            <button
+                class="category active"
+                data-category="all"
+                type="button"
+            >
+                Toutes
+            </button>
+
+            <button
+                class="category"
+                data-category="SYSTEME"
+                type="button"
+            >
+                🖥️ Système
+            </button>
+
+            <button
+                class="category"
+                data-category="CPU_RAM"
+                type="button"
+            >
+                🧠 CPU / RAM
+            </button>
+
+            <button
+                class="category"
+                data-category="GPU"
+                type="button"
+            >
+                🎮 GPU
+            </button>
+
+            <button
+                class="category"
+                data-category="GAMING"
+                type="button"
+            >
+                ⚡ Gaming
+            </button>
+
+            <button
+                class="category"
+                data-category="RESEAU"
+                type="button"
+            >
+                🌐 Réseau
+            </button>
+
+            <button
+                class="category"
+                data-category="STOCKAGE"
+                type="button"
+            >
+                💾 Stockage
+            </button>
+
+            <button
+                class="category"
+                data-category="MAINTENANCE"
+                type="button"
+            >
+                🔧 Maintenance
+            </button>
+
+            <button
+                class="category"
+                data-category="SECURITE"
+                type="button"
+            >
+                🛡️ Sécurité
+            </button>
+
+            <button
+                class="category"
+                data-category="OUTILS"
+                type="button"
+            >
+                🧰 Outils
+            </button>
+
+            <button
+                class="category"
+                data-category="PARAMETRES"
+                type="button"
+            >
+                ⚙️ Paramètres
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATISTICS
+         ===================================================== -->
+
+    <section>
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-label">Total</div>
+
+                <div
+                    id="countTotal"
+                    class="stat-value"
+                >
+                    500
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-label">Affichées</div>
+
+                <div
+                    id="countVisible"
+                    class="stat-value"
+                >
+                    500
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-label">Catégorie</div>
+
+                <div
+                    id="currentCategory"
+                    class="stat-value"
+                    style="font-size:18px;"
+                >
+                    Toutes
+                </div>
+            </div>
+
+
+            <div class="stat">
+                <div class="stat-label">Version</div>
+
+                <div class="stat-value">
+                    1.0
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         OPTIMIZATIONS GRID
+         ===================================================== -->
+
+    <section>
+
+        <div
+            id="optimizationGrid"
+            class="optimizations"
+        ></div>
+
+
+        <div
+            id="emptyState"
+            class="empty"
+            style="display:none;"
+        >
+
+            <h3>
+                🔎 Aucune optimisation trouvée
+            </h3>
+
+            <p>
+                Essaie une autre recherche ou une autre catégorie.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROGRESS
+         ===================================================== -->
+
+    <section
+        class="optimization-card"
+        style="margin-top:30px;"
+    >
+
+        <div class="card-header">
+
+            <div>
+
+                <div class="card-category">
+                    PROGRESSION
+                </div>
+
+                <h3>
+                    ⚡ Optimisations exécutées
+                </h3>
+
+            </div>
+
+            <div
+                id="progressPercent"
+                class="card-number"
+            >
+                0%
+            </div>
+
+        </div>
+
+
+        <div class="progress">
+
+            <div
+                id="progressBar"
+                class="progress-bar"
+            ></div>
+
+        </div>
+
+
+        <p id="progressText">
+            Aucune optimisation exécutée pendant cette session.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         TERMINAL
+         ===================================================== -->
+
+    <section style="margin-top:30px;">
+
+        <div class="optimization-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <div class="card-category">
+                        HUBBOOST TERMINAL
+                    </div>
+
+                    <h3>
+                        💻 Console
+                    </h3>
+
+                </div>
+
+                <div class="card-number">
+                    CMD
+                </div>
+
+            </div>
+
+
+            <div
+                id="terminal"
+                class="terminal"
+            >
+
+                <div class="terminal-line">
+                    <span class="terminal-prompt">
+                        HUBBOOST&gt;
+                    </span>
+                    Initialisation...
+                </div>
+
+                <div class="terminal-line">
+                    Chargement du moteur HUBBOOST...
+                </div>
+
+                <div class="terminal-line">
+                    500 optimisations disponibles.
+                </div>
+
+                <div class="terminal-line">
+                    Système prêt.
+                </div>
+
+                <div class="terminal-line">
+                    En attente d'une action...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMMUNITY / FORUM
+         ===================================================== -->
+
+    <section
+        id="community"
+        style="margin-top:30px;"
+    >
+
+        <div class="optimization-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <div class="card-category">
+                        HUBBOOST COMMUNITY
+                    </div>
+
+                    <h3>
+                        💬 Forum communautaire
+                    </h3>
+
+                </div>
+
+                <div
+                    id="forumStatus"
+                    class="card-number"
+                >
+                    ONLINE
+                </div>
+
+            </div>
+
+
+            <p>
+                Discute avec la communauté HUBBOOST, partage tes
+                optimisations, demande de l'aide ou présente ton PC.
+            </p>
+
+
+            <!-- ACCOUNT -->
+
+            <div
+                id="accountBar"
+                style="
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-between;
+                    gap:15px;
+                    flex-wrap:wrap;
+                    margin-top:20px;
+                    padding:15px;
+                    border:1px solid rgba(255,255,255,.08);
+                    border-radius:12px;
+                "
+            >
+
+                <div
+                    id="accountInfo"
+                    style="color:#8ca996;"
+                >
+                    Connecte-toi pour participer au forum.
+                </div>
+
+
+                <button
+                    id="forumLogin"
+                    class="button"
+                    type="button"
+                >
+                    🔐 Se connecter
+                </button>
+
+            </div>
+
+
+            <!-- FORUM SEARCH -->
+
+            <div
+                style="
+                    display:flex;
+                    gap:10px;
+                    flex-wrap:wrap;
+                    margin-top:20px;
+                "
+            >
+
+                <input
+                    id="forumSearch"
+                    class="search"
+                    type="search"
+                    placeholder="🔎 Rechercher une discussion..."
+                    style="flex:1;min-width:220px;"
+                >
+
+
+                <button
+                    id="refreshForum"
+                    class="button-secondary"
+                    type="button"
+                >
+                    🔄 Actualiser
+                </button>
+
+
+                <button
+                    id="newTopic"
+                    class="button"
+                    type="button"
+                >
+                    ✚ Nouveau sujet
+                </button>
+
+            </div>
+
+
+            <!-- FORUM CATEGORIES -->
+
+            <div
+                id="forumCategories"
+                class="categories"
+                style="margin-top:15px;"
+            >
+
+                <button
+                    class="category active forum-category"
+                    data-forum-category=""
+                    type="button"
+                >
+                    Toutes
+                </button>
+
+                <button
+                    class="category forum-category"
+                    data-forum-category="general"
+                    type="button"
+                >
+                    💬 Général
+                </button>
+
+                <button
+                    class="category forum-category"
+                    data-forum-category="gaming"
+                    type="button"
+                >
+                    🎮 Gaming
+                </button>
+
+                <button
+                    class="category forum-category"
+                    data-forum-category="windows"
+                    type="button"
+                >
+                    🪟 Windows
+                </button>
+
+                <button
+                    class="category forum-category"
+                    data-forum-category="hardware"
+                    type="button"
+                >
+                    🖥️ Hardware
+                </button>
+
+                <button
+                    class="category forum-category"
+                    data-forum-category="help"
+                    type="button"
+                >
+                    🆘 Aide
+                </button>
+
+                <button
+                    class="category forum-category"
+                    data-forum-category="showcase"
+                    type="button"
+                >
+                    🚀 Showcase
+                </button>
+
+            </div>
+
+
+            <!-- FORUM LIST -->
+
+            <div
+                id="forumList"
+                style="margin-top:20px;"
+            >
+
+                <div
+                    class="terminal"
+                    id="forumLoading"
+                >
+                    Chargement des discussions...
+                </div>
+
+            </div>
+
+
+            <!-- PAGINATION -->
+
+            <div
+                id="forumPagination"
+                style="
+                    display:flex;
+                    justify-content:center;
+                    gap:10px;
+                    flex-wrap:wrap;
+                    margin-top:20px;
+                "
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SUPPORT
+         ===================================================== -->
+
+    <section
+        id="support"
+        style="margin-top:30px;"
+    >
+
+        <div class="optimization-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <div class="card-category">
+                        SUPPORT
+                    </div>
+
+                    <h3>
+                        🛠️ Besoin d'aide ?
+                    </h3>
+
+                </div>
+
+                <div class="card-number">
+                    HELP
+                </div>
+
+            </div>
+
+
+            <p>
+                Un problème avec HUBBOOST ? Contacte le support
+                et décris précisément le problème rencontré.
+            </p>
+
+
+            <form
+                id="supportForm"
+                style="margin-top:20px;"
+            >
+
+                <div
+                    style="
+                        display:grid;
+                        grid-template-columns:
+                            repeat(2, minmax(0, 1fr));
+                        gap:12px;
+                    "
+                >
+
+                    <input
+                        id="supportName"
+                        class="search"
+                        type="text"
+                        placeholder="Ton pseudo"
+                        maxlength="60"
+                    >
+
+
+                    <input
+                        id="supportEmail"
+                        class="search"
+                        type="email"
+                        placeholder="Ton e-mail"
+                        maxlength="150"
+                    >
+
+                </div>
+
+
+                <input
+                    id="supportSubject"
+                    class="search"
+                    type="text"
+                    placeholder="Sujet du problème"
+                    maxlength="120"
+                    style="margin-top:12px;width:100%;"
+                    required
+                >
+
+
+                <textarea
+                    id="supportMessage"
+                    class="search"
+                    placeholder="Décris ton problème..."
+                    maxlength="3000"
+                    required
+                    style="
+                        width:100%;
+                        min-height:150px;
+                        padding-top:15px;
+                        resize:vertical;
+                        margin-top:12px;
+                    "
+                ></textarea>
+
+
+                <div
+                    style="
+                        display:flex;
+                        gap:10px;
+                        flex-wrap:wrap;
+                        margin-top:15px;
+                    "
+                >
+
+                    <button type="submit">
+                        📩 Envoyer au support
+                    </button>
+
+
+                    <button
+                        id="resetSupport"
+                        type="reset"
+                        class="button-secondary"
+                    >
+                        Effacer
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div
+                id="supportResult"
+                style="
+                    display:none;
+                    margin-top:15px;
+                "
+                class="terminal"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+         ===================================================== -->
+
+    <section style="margin-top:30px;">
+
+        <div class="optimization-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <div class="card-category">
+                        FAQ
+                    </div>
+
+                    <h3>
+                        ❓ Questions fréquentes
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <details>
+
+                <summary>
+                    HUBBOOST est-il gratuit ?
+                </summary>
+
+                <p style="margin-top:10px;">
+                    Oui. Le téléchargement du script HUBBOOST
+                    peut être proposé gratuitement.
+                </p>
+
+            </details>
+
+
+            <details style="margin-top:15px;">
+
+                <summary>
+                    Est-ce que HUBBOOST garantit plus de FPS ?
+                </summary>
+
+                <p style="margin-top:10px;">
+                    Non. Les performances dépendent du matériel,
+                    des pilotes, des jeux et de la configuration
+                    Windows.
+                </p>
+
+            </details>
+
+
+            <details style="margin-top:15px;">
+
+                <summary>
+                    Comment fonctionne le forum ?
+                </summary>
+
+                <p style="margin-top:10px;">
+                    La lecture du forum est publique. Pour créer
+                    un sujet ou répondre, connecte-toi avec GitHub
+                    ou Discord.
+                </p>
+
+            </details>
+
+
+            <details style="margin-top:15px;">
+
+                <summary>
+                    Certaines actions demandent-elles
+                    l'administrateur ?
+                </summary>
+
+                <p style="margin-top:10px;">
+                    Oui. Certaines commandes Windows nécessitent
+                    des privilèges administrateur.
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ADMIN
+         ===================================================== -->
+
+    <section
+        id="admin"
+        style="margin-top:30px;"
+    >
+
+        <div class="optimization-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <div class="card-category">
+                        ADMINISTRATION
+                    </div>
+
+                    <h3>
+                        🔐 Espace administrateur
+                    </h3>
+
+                </div>
+
+                <div class="card-number">
+                    ADMIN
+                </div>
+
+            </div>
+
+
+            <p>
+                L'espace administrateur est réservé à la gestion
+                du support, des statistiques et des journaux.
+            </p>
+
+
+            <button
+                id="openAdmin"
+                type="button"
+                style="margin-top:18px;"
+            >
+                🔐 Ouvrir l'administration
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRIVACY
+         ===================================================== -->
+
+    <section style="margin-top:30px;">
+
+        <div class="optimization-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <div class="card-category">
+                        CONFIDENTIALITÉ
+                    </div>
+
+                    <h3>
+                        🔒 Données et journaux
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                Le serveur peut enregistrer certaines informations
+                techniques nécessaires à la sécurité, au support
+                et aux statistiques du service.
+            </p>
+
+
+            <p style="margin-top:10px;">
+                Les données doivent être conservées pendant une
+                durée limitée et utilisées uniquement pour leur
+                finalité prévue.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <p>
+            <strong>HUBBOOST</strong>
+            — Windows Optimizer
+        </p>
+
+
+        <p style="margin-top:8px;">
+
+            <a
+                href="#community"
+                style="color:inherit;"
+            >
+                Communauté
+            </a>
+
+            &nbsp;•&nbsp;
+
+            <a
+                href="#support"
+                style="color:inherit;"
+            >
+                Support
+            </a>
+
+            &nbsp;•&nbsp;
+
+            <a
+                href="#admin"
+                style="color:inherit;"
+            >
+                Administration
+            </a>
+
+            &nbsp;•&nbsp;
+
+            <a
+                href="#"
+                id="privacyLink"
+                style="color:inherit;"
+            >
+                Confidentialité
+            </a>
+
+        </p>
+
+
+        <p style="margin-top:8px;">
+            HUBBOOST © 2026
+        </p>
+
+    </footer>
+
+</div>
+
+
+<!-- =========================================================
+     OPTIMIZATION MODAL
+     ========================================================= -->
+
+<div
+    id="optimizationModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <div
+                    id="modalCategory"
+                    class="card-category"
+                >
+                    SYSTÈME
+                </div>
+
+                <h2 id="modalTitle">
+                    Optimisation
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="modal-close"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <p id="modalDescription">
+            Description de l'optimisation.
+        </p>
+
+
+        <div style="margin-top:22px;">
+
+            <div class="card-category">
+                COMMANDE
+            </div>
+
+
+            <div
+                id="modalCommand"
+                class="terminal"
+                style="margin-top:8px;"
+            >
+                —
+            </div>
+
+        </div>
+
+
+        <div
+            style="
+                display:flex;
+                gap:10px;
+                flex-wrap:wrap;
+                margin-top:22px;
+            "
+        >
+
+            <button
+                id="copyCommand"
+                type="button"
+            >
+                📋 Copier
+            </button>
+
+
+            <button
+                id="runOptimization"
+                class="button-secondary"
+                type="button"
+            >
+                ▶ Exécuter
+            </button>
+
+
+            <button
+                id="modalDownload"
+                class="button-secondary"
+                type="button"
+            >
+                📥 Télécharger BAT
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SYSTEM MODAL
+     ========================================================= -->
+
+<div
+    id="systemModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <div class="card-category">
+                    SYSTÈME
+                </div>
+
+                <h2>
+                    🖥️ Informations système
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeSystem"
+                class="modal-close"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="terminal">
+
+            <div class="terminal-line">
+                OS :
+                <span id="detailOS">
+                    Détection...
+                </span>
+            </div>
+
+
+            <div class="terminal-line">
+                Navigateur :
+                <span id="detailBrowser">
+                    Détection...
+                </span>
+            </div>
+
+
+            <div class="terminal-line">
+                Langue :
+                <span id="detailLanguage">
+                    Détection...
+                </span>
+            </div>
+
+
+            <div class="terminal-line">
+                Plateforme :
+                <span id="detailPlatform">
+                    Détection...
+                </span>
+            </div>
+
+
+            <div class="terminal-line">
+                Écran :
+                <span id="detailScreen">
+                    Détection...
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     AUTH MODAL
+     ========================================================= -->
+
+<div
+    id="accountModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <div class="card-category">
+                    HUBBOOST ACCOUNT
+                </div>
+
+                <h2>
+                    👤 Ton compte
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeAccount"
+                class="modal-close"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <!-- NOT CONNECTED -->
+
+        <div id="authLoggedOut">
+
+            <p>
+                Connecte-toi avec ton compte GitHub ou Discord
+                pour participer au forum HUBBOOST.
+            </p>
+
+
+            <div
+                style="
+                    display:grid;
+                    gap:12px;
+                    margin-top:22px;
+                "
+            >
+
+                <button
+                    id="loginDiscord"
+                    type="button"
+                    style="width:100%;"
+                >
+                    🎮 Continuer avec Discord
+                </button>
+
+
+                <button
+                    id="loginGithub"
+                    type="button"
+                    class="button-secondary"
+                    style="width:100%;"
+                >
+                    🐙 Continuer avec GitHub
+                </button>
+
+            </div>
+
+
+            <div
+                id="authError"
+                class="terminal"
+                style="
+                    display:none;
+                    margin-top:15px;
+                "
+            ></div>
+
+        </div>
+
+
+        <!-- CONNECTED -->
+
+        <div
+            id="authLoggedIn"
+            style="display:none;"
+        >
+
+            <div
+                style="
+                    display:flex;
+                    align-items:center;
+                    gap:15px;
+                "
+            >
+
+                <img
+                    id="accountAvatar"
+                    src=""
+                    alt="Avatar"
+                    style="
+                        width:64px;
+                        height:64px;
+                        border-radius:50%;
+                        object-fit:cover;
+                        display:none;
+                    "
+                >
+
+
+                <div>
+
+                    <div
+                        id="accountUsername"
+                        style="
+                            font-size:20px;
+                            font-weight:700;
+                        "
+                    >
+                        —
+                    </div>
+
+
+                    <div
+                        id="accountProvider"
+                        style="
+                            margin-top:5px;
+                            opacity:.7;
+                        "
+                    >
+                        —
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutAccount"
+                class="button-secondary"
+                type="button"
+                style="margin-top:20px;"
+            >
+                🚪 Déconnexion
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NEW TOPIC MODAL
+     ========================================================= -->
+
+<div
+    id="topicModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <div class="card-category">
+                    COMMUNAUTÉ
+                </div>
+
+                <h2>
+                    ✚ Nouveau sujet
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeTopic"
+                class="modal-close"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <form id="topicForm">
+
+            <input
+                id="topicTitle"
+                class="search"
+                type="text"
+                placeholder="Titre du sujet"
+                maxlength="120"
+                required
+                style="
+                    width:100%;
+                    margin-top:20px;
+                "
+            >
+
+
+            <select
+                id="topicCategory"
+                class="search"
+                required
+                style="
+                    width:100%;
+                    margin-top:12px;
+                "
+            >
+
+                <option value="general">
+                    💬 Général
+                </option>
+
+                <option value="gaming">
+                    🎮 Gaming
+                </option>
+
+                <option value="windows">
+                    🪟 Windows
+                </option>
+
+                <option value="hardware">
+                    🖥️ Hardware
+                </option>
+
+                <option value="help">
+                    🆘 Aide
+                </option>
+
+                <option value="showcase">
+                    🚀 Showcase
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="topicContent"
+                class="search"
+                placeholder="Écris ton message..."
+                maxlength="10000"
+                required
+                style="
+                    width:100%;
+                    min-height:200px;
+                    margin-top:12px;
+                    resize:vertical;
+                "
+            ></textarea>
+
+
+            <div
+                style="
+                    display:flex;
+                    gap:10px;
+                    flex-wrap:wrap;
+                    margin-top:15px;
+                "
+            >
+
+                <button type="submit">
+                    🚀 Publier
+                </button>
+
+
+                <button
+                    id="cancelTopic"
+                    class="button-secondary"
+                    type="button"
+                >
+                    Annuler
+                </button>
+
+            </div>
+
+
+            <div
+                id="topicResult"
+                class="terminal"
+                style="
+                    display:none;
+                    margin-top:15px;
+                "
+            ></div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     POST MODAL
+     ========================================================= -->
+
+<div
+    id="postModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <div
+                    id="postCategory"
+                    class="card-category"
+                >
+                    GÉNÉRAL
+                </div>
+
+                <h2 id="postTitle">
+                    Discussion
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closePost"
+                class="modal-close"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div
+            id="postAuthor"
+            style="
+                margin-top:8px;
+                opacity:.7;
+            "
+        ></div>
+
+
+        <div
+            id="postContent"
+            class="terminal"
+            style="
+                margin-top:18px;
+                white-space:pre-wrap;
+            "
+        ></div>
+
+
+        <div
+            class="card-category"
+            style="margin-top:25px;"
+        >
+            RÉPONSES
+        </div>
+
+
+        <div
+            id="replyList"
+            style="margin-top:10px;"
+        ></div>
+
+
+        <form
+            id="replyForm"
+            style="margin-top:20px;"
+        >
+
+            <textarea
+                id="replyContent"
+                class="search"
+                placeholder="Écris une réponse..."
+                maxlength="10000"
+                required
+                style="
+                    width:100%;
+                    min-height:120px;
+                    resize:vertical;
+                "
+            ></textarea>
+
+
+            <button
+                type="submit"
+                style="margin-top:12px;"
+            >
+                💬 Répondre
+            </button>
+
+        </form>
+
+
+        <div
+            id="replyResult"
+            class="terminal"
+            style="
+                display:none;
+                margin-top:12px;
+            "
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN LOGIN MODAL
+     ========================================================= -->
+
+<div
+    id="adminModal"
+    class="modal"
+    aria-hidden="true"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <div class="card-category">
+                    ADMINISTRATION
+                </div>
+
+                <h2>
+                    🔐 Connexion admin
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeAdmin"
+                class="modal-close"
+                type="button"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <p>
+            Cette connexion sera vérifiée par le serveur.
+            Aucun mot de passe administrateur ne doit être
+            stocké dans le HTML.
+        </p>
+
+
+        <form
+            id="adminLoginForm"
+            style="margin-top:20px;"
+        >
+
+            <input
+                id="adminEmail"
+                class="search"
+                type="email"
+                placeholder="E-mail administrateur"
+                autocomplete="username"
+                required
+                style="width:100%;"
+            >
+
+
+            <input
+                id="adminPassword"
+                class="search"
+                type="password"
+                placeholder="Mot de passe"
+                autocomplete="current-password"
+                required
+                style="
+                    width:100%;
+                    margin-top:12px;
+                "
+            >
+
+
+            <button
+                type="submit"
+                style="margin-top:15px;"
+            >
+                🔐 Connexion
+            </button>
+
+        </form>
+
+
+        <div
+            id="adminLoginResult"
+            class="terminal"
+            style="
+                display:none;
+                margin-top:15px;
+            "
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NOTIFICATION
+     ========================================================= -->
+
+<div
+    id="notification"
+    class="notification"
+    aria-live="polite"
+>
+
+    <div
+        id="notificationTitle"
+        class="notification-title"
+    >
+        HUBBOOST
+    </div>
+
+
+    <div
+        id="notificationText"
+        class="notification-text"
+    >
+        —
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     BACKEND CONFIG
+     ========================================================= -->
+
+<script>
+
+    /*
+     * Backend HUBBOOST
+     *
+     * Local :
+     * http://127.0.0.1:5000
+     *
+     * Production :
+     * remplace HUBBOOST_API par ton URL Render.
+     *
+     * Exemple :
+     * window.HUBBOOST_API = "https://hubboost-api.onrender.com";
+     */
+
+    window.HUBBOOST_API =
+        window.HUBBOOST_API ||
+        "http://127.0.0.1:5000";
+
+</script>
+
+
+<!-- =========================================================
+     MAIN JAVASCRIPT
+     ========================================================= -->
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
