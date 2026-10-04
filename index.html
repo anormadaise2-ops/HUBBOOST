@@ -1,2113 +1,2497 @@
 <!DOCTYPE html>
-<html lang="fr">
 
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+```
+<title>HUBBOOST</title>
 
-    <meta
-        name="description"
-        content="HUBBOOST - Optimiseur Windows avec 500 optimisations et communauté."
-    >
+<meta
+    name="description"
+    content="HUBBOOST — Community platform"
+>
 
-    <meta
-        name="theme-color"
-        content="#050806"
-    >
+<meta name="theme-color" content="#070912">
 
-    <meta
-        name="robots"
-        content="index, follow"
-    >
+<style>
+    :root {
+        --bg: #060711;
+        --bg2: #0a0d1a;
+        --card: rgba(255,255,255,.055);
+        --card-hover: rgba(255,255,255,.085);
+        --border: rgba(255,255,255,.1);
 
-    <title>HUBBOOST — Windows Optimizer</title>
+        --text: #ffffff;
+        --muted: #9ca3b8;
 
-    <link
-        rel="stylesheet"
-        href="main.css"
-    >
+        --purple: #7657ff;
+        --blue: #00c8ff;
+        --green: #37e6a1;
+        --red: #ff5577;
+
+        --radius: 20px;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
+
+        font-family:
+            Inter,
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+
+        color: var(--text);
+
+        background:
+            radial-gradient(
+                circle at 10% 0%,
+                rgba(118,87,255,.18),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 90% 10%,
+                rgba(0,200,255,.12),
+                transparent 28%
+            ),
+            linear-gradient(
+                180deg,
+                #05060e,
+                #080a14 50%,
+                #05060d
+            );
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+        font: inherit;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    /* =========================================================
+       BACKGROUND
+    ========================================================= */
+
+    #particles {
+        position: fixed;
+        inset: 0;
+        z-index: -4;
+        pointer-events: none;
+    }
+
+    .background-glow {
+        position: fixed;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle,
+                rgba(118,87,255,.13),
+                transparent 70%
+            );
+
+        filter: blur(30px);
+        pointer-events: none;
+        z-index: -3;
+
+        transform: translate(-50%, -50%);
+        transition: left .3s ease, top .3s ease;
+    }
+
+    /* =========================================================
+       NAVBAR
+    ========================================================= */
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 100;
+
+        height: 76px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 5%;
+
+        background:
+            rgba(5,6,14,.7);
+
+        backdrop-filter: blur(20px);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.07);
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: .5px;
+    }
+
+    .logo {
+        width: 43px;
+        height: 43px;
+
+        filter:
+            drop-shadow(
+                0 0 15px
+                rgba(118,87,255,.45)
+            );
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .nav-link {
+        padding: 10px 14px;
+        border-radius: 11px;
+
+        color: #b8bdd0;
+
+        transition:
+            background .2s ease,
+            color .2s ease,
+            transform .2s ease;
+    }
+
+    .nav-link:hover {
+        color: white;
+        background: rgba(255,255,255,.07);
+        transform: translateY(-1px);
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu-button {
+        display: none;
+
+        width: 43px;
+        height: 43px;
+
+        border: 1px solid var(--border);
+        border-radius: 12px;
+
+        background: rgba(255,255,255,.05);
+        color: white;
+    }
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .btn {
+        min-height: 45px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+
+        padding: 0 18px;
+
+        border-radius: 12px;
+
+        border: 1px solid var(--border);
+
+        background: rgba(255,255,255,.05);
+        color: white;
+
+        font-weight: 700;
+
+        transition:
+            transform .2s ease,
+            background .2s ease,
+            box-shadow .2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        background: rgba(255,255,255,.09);
+    }
+
+    .btn-primary {
+        border: none;
+
+        background:
+            linear-gradient(
+                100deg,
+                #7657ff,
+                #3f8cff,
+                #00c8ff
+            );
+
+        box-shadow:
+            0 10px 35px
+            rgba(88,91,255,.2);
+    }
+
+    .btn-primary:hover {
+        box-shadow:
+            0 15px 45px
+            rgba(88,91,255,.35);
+    }
+
+    .btn-danger {
+        color: #ff8298;
+        border-color: rgba(255,85,119,.2);
+    }
+
+    /* =========================================================
+       MAIN
+    ========================================================= */
+
+    main {
+        padding-top: 76px;
+    }
+
+    .page {
+        width: min(1180px, 92%);
+        margin: auto;
+    }
+
+    .section {
+        padding: 95px 0;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+        min-height: calc(100vh - 76px);
+
+        display: flex;
+        align-items: center;
+
+        padding: 80px 0;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+
+        padding: 8px 13px;
+
+        border: 1px solid rgba(55,230,161,.2);
+        border-radius: 999px;
+
+        background:
+            rgba(55,230,161,.06);
+
+        color: #a6ffd8;
+
+        font-size: 13px;
+        font-weight: 700;
+
+        animation:
+            fadeUp .7s ease both;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+
+        border-radius: 50%;
+        background: var(--green);
+
+        box-shadow:
+            0 0 14px
+            var(--green);
+
+        animation:
+            pulse 1.7s infinite;
+    }
+
+    .hero h1 {
+        margin-top: 25px;
+
+        font-size:
+            clamp(50px, 8vw, 100px);
+
+        line-height: .94;
+
+        letter-spacing: -4px;
+
+        animation:
+            fadeUp .8s .1s ease both;
+    }
+
+    .gradient {
+        background:
+            linear-gradient(
+                90deg,
+                #ffffff,
+                #a894ff,
+                #00d9ff
+            );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .hero-description {
+        max-width: 680px;
+
+        margin-top: 28px;
+
+        color: var(--muted);
+
+        font-size: 19px;
+        line-height: 1.75;
+
+        animation:
+            fadeUp .8s .2s ease both;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        margin-top: 35px;
+
+        animation:
+            fadeUp .8s .3s ease both;
+    }
+
+    .hero-orb {
+        position: absolute;
+
+        right: 7%;
+        top: 30%;
+
+        width: 280px;
+        height: 280px;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle at 35% 30%,
+                rgba(255,255,255,.45),
+                rgba(118,87,255,.28) 20%,
+                rgba(0,200,255,.08) 50%,
+                transparent 70%
+            );
+
+        filter: blur(4px);
+
+        animation:
+            float 6s ease-in-out infinite;
+    }
+
+    /* =========================================================
+       CARDS
+    ========================================================= */
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .section-header p {
+        margin-top: 10px;
+        color: var(--muted);
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .card {
+        position: relative;
+
+        padding: 27px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: var(--radius);
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,.065),
+                rgba(255,255,255,.025)
+            );
+
+        overflow: hidden;
+
+        transition:
+            transform .3s ease,
+            border-color .3s ease,
+            background .3s ease;
+    }
+
+    .card::before {
+        content: "";
+
+        position: absolute;
+
+        width: 150px;
+        height: 150px;
+
+        right: -80px;
+        top: -80px;
+
+        border-radius: 50%;
+
+        background:
+            rgba(118,87,255,.13);
+
+        filter: blur(25px);
+    }
+
+    .card:hover {
+        transform: translateY(-7px);
+
+        border-color:
+            rgba(118,87,255,.3);
+
+        background:
+            var(--card-hover);
+    }
+
+    .card-icon {
+        font-size: 30px;
+        margin-bottom: 18px;
+    }
+
+    .card h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .card p {
+        color: var(--muted);
+        line-height: 1.65;
+    }
+
+    /* =========================================================
+       FORUM
+    ========================================================= */
+
+    .forum {
+        display: grid;
+
+        grid-template-columns:
+            1fr 320px;
+
+        gap: 20px;
+    }
+
+    .forum-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    .forum-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        padding: 19px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 16px;
+
+        background:
+            rgba(255,255,255,.035);
+
+        transition:
+            transform .2s,
+            background .2s;
+    }
+
+    .forum-item:hover {
+        transform: translateX(4px);
+        background:
+            rgba(255,255,255,.065);
+    }
+
+    .forum-icon {
+        width: 48px;
+        height: 48px;
+
+        flex: 0 0 auto;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 13px;
+
+        background:
+            rgba(118,87,255,.12);
+
+        font-size: 22px;
+    }
+
+    .forum-info {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .forum-info h3 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .forum-info p {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .forum-count {
+        color: #858ca2;
+        font-size: 13px;
+    }
+
+    .forum-side {
+        padding: 24px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 18px;
+
+        background:
+            rgba(255,255,255,.04);
+    }
+
+    .forum-side h3 {
+        margin-bottom: 10px;
+    }
+
+    .forum-side p {
+        color: var(--muted);
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* =========================================================
+       DOWNLOAD
+    ========================================================= */
+
+    .download-box {
+        position: relative;
+
+        padding: 55px;
+
+        overflow: hidden;
+
+        border:
+            1px solid rgba(118,87,255,.25);
+
+        border-radius: 28px;
+
+        background:
+            linear-gradient(
+                130deg,
+                rgba(118,87,255,.13),
+                rgba(0,200,255,.07)
+            );
+    }
+
+    .download-box h2 {
+        font-size: 42px;
+        margin-bottom: 12px;
+    }
+
+    .download-box p {
+        color: var(--muted);
+        margin-bottom: 25px;
+        max-width: 650px;
+        line-height: 1.6;
+    }
+
+    /* =========================================================
+       PROFILE
+    ========================================================= */
+
+    .profile-card {
+        max-width: 650px;
+        margin: auto;
+
+        padding: 35px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 24px;
+
+        background:
+            rgba(255,255,255,.045);
+    }
+
+    .profile-top {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .avatar-wrap {
+        position: relative;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+
+        border:
+            3px solid rgba(118,87,255,.5);
+
+        background: #111425;
+
+        display: block;
+    }
+
+    .avatar-edit {
+        position: absolute;
+
+        right: -3px;
+        bottom: -3px;
+
+        width: 31px;
+        height: 31px;
+
+        border-radius: 50%;
+
+        border: 3px solid #0a0c16;
+
+        background:
+            var(--purple);
+
+        color: white;
+
+        display: grid;
+        place-items: center;
+
+        font-size: 14px;
+    }
+
+    .profile-name {
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .profile-provider {
+        margin-top: 5px;
+        color: var(--muted);
+    }
+
+    .profile-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        margin-top: 25px;
+    }
+
+    #avatarInput {
+        display: none;
+    }
+
+    /* =========================================================
+       AUTH MODAL
+    ========================================================= */
+
+    .modal {
+        position: fixed;
+        inset: 0;
+
+        z-index: 500;
+
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+
+        background:
+            rgba(0,0,0,.7);
+
+        backdrop-filter: blur(14px);
+    }
+
+    .modal.active {
+        display: flex;
+        animation:
+            modalIn .25s ease both;
+    }
+
+    .modal-card {
+        width: min(470px, 100%);
+
+        padding: 32px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 24px;
+
+        background:
+            #0b0e1b;
+
+        box-shadow:
+            0 30px 100px
+            rgba(0,0,0,.5);
+    }
+
+    .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 25px;
+    }
+
+    .close {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        border:
+            1px solid var(--border);
+
+        background:
+            rgba(255,255,255,.05);
+
+        color: white;
+    }
+
+    .auth-buttons {
+        display: grid;
+        gap: 12px;
+    }
+
+    .auth-button {
+        width: 100%;
+        min-height: 55px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 13px;
+
+        background:
+            rgba(255,255,255,.05);
+
+        color: white;
+
+        font-weight: 700;
+
+        transition: .2s;
+    }
+
+    .auth-button:hover {
+        background:
+            rgba(255,255,255,.09);
+
+        transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    .mobile-menu {
+        position: fixed;
+
+        top: 76px;
+        left: 0;
+        right: 0;
+
+        z-index: 99;
+
+        display: none;
+
+        padding: 15px;
+
+        background:
+            rgba(6,7,17,.96);
+
+        backdrop-filter: blur(20px);
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+    .mobile-menu.active {
+        display: grid;
+        gap: 5px;
+    }
+
+    .mobile-menu a,
+    .mobile-menu button {
+        padding: 14px;
+
+        border-radius: 12px;
+
+        border: none;
+
+        background: transparent;
+
+        color: white;
+
+        text-align: left;
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu button:hover {
+        background:
+            rgba(255,255,255,.07);
+    }
+
+    /* =========================================================
+       TOAST
+    ========================================================= */
+
+    #toast {
+        position: fixed;
+
+        right: 22px;
+        bottom: 22px;
+
+        z-index: 1000;
+
+        max-width: 350px;
+
+        padding: 15px 18px;
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 14px;
+
+        background:
+            rgba(10,12,24,.94);
+
+        backdrop-filter: blur(15px);
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.3);
+
+        transform:
+            translateY(20px);
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition: .3s;
+    }
+
+    #toast.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+        padding: 45px 0;
+
+        border-top:
+            1px solid rgba(255,255,255,.07);
+
+        color: #73798d;
+
+        text-align: center;
+    }
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+        50% {
+            transform:
+                translateY(-25px)
+                scale(1.04);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: .45;
+            transform: scale(.75);
+        }
+    }
+
+    @keyframes modalIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 850px) {
+
+        .nav-links {
+            display: none;
+        }
+
+        .menu-button {
+            display: block;
+        }
+
+        .hero-orb {
+            right: -100px;
+            top: 25%;
+            opacity: .5;
+        }
+
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .forum {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        .navbar {
+            padding: 0 4%;
+        }
+
+        .nav-actions .btn {
+            display: none;
+        }
+
+        .hero {
+            padding: 60px 0;
+        }
+
+        .hero h1 {
+            letter-spacing: -2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+        }
+
+        .section {
+            padding: 65px 0;
+        }
+
+        .section-header h2,
+        .download-box h2 {
+            font-size: 32px;
+        }
+
+        .download-box {
+            padding: 30px 22px;
+        }
+
+        .profile-top {
+            align-items: flex-start;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        *,
+        *::before,
+        *::after {
+            scroll-behavior: auto !important;
+            animation-duration: .01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: .01ms !important;
+        }
+    }
+</style>
+```
+
 </head>
-
 
 <body>
 
-<div class="app">
+<canvas id="particles"></canvas>
 
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
+<div class="background-glow" id="mouseGlow"></div>
 
-    <header class="header">
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
 
-        <div class="logo">
+<header class="navbar">
 
-            <div class="logo-icon">
-                ⚡
-            </div>
+```
+<a href="#accueil" class="brand">
 
-            <div>
-                HUB<span>BOOST</span>
-            </div>
+    <!-- LOGO SVG HUBBOOST -->
+    <svg
+        class="logo"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="HUBBOOST"
+    >
+        <defs>
+            <linearGradient
+                id="logoGradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+            >
+                <stop offset="0%" stop-color="#7657ff"/>
+                <stop offset="100%" stop-color="#00c8ff"/>
+            </linearGradient>
+        </defs>
 
+        <rect
+            x="8"
+            y="8"
+            width="84"
+            height="84"
+            rx="24"
+            fill="#0d1020"
+            stroke="url(#logoGradient)"
+            stroke-width="5"
+        />
+
+        <path
+            d="M30 35
+               L30 65
+               L42 65
+               L42 55
+               L58 55
+               L58 65
+               L70 65
+               L70 35
+               L58 35
+               L58 45
+               L42 45
+               L42 35
+               Z"
+            fill="url(#logoGradient)"
+        />
+    </svg>
+
+    <span>HUBBOOST</span>
+
+</a>
+
+
+<nav class="nav-links">
+
+    <a href="#accueil" class="nav-link">
+        Accueil
+    </a>
+
+    <a href="#fonctionnalites" class="nav-link">
+        Fonctionnalités
+    </a>
+
+    <a href="#forum" class="nav-link">
+        Forum
+    </a>
+
+    <a href="#download" class="nav-link">
+        Télécharger
+    </a>
+
+    <a href="#profil" class="nav-link">
+        Profil
+    </a>
+
+</nav>
+
+
+<div class="nav-actions">
+
+    <button
+        class="btn"
+        id="loginButton"
+        type="button"
+    >
+        🔐 Connexion
+    </button>
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Menu"
+    >
+        ☰
+    </button>
+
+</div>
+```
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+```
+<a href="#accueil">🏠 Accueil</a>
+
+<a href="#fonctionnalites">
+    ⚡ Fonctionnalités
+</a>
+
+<a href="#forum">
+    💬 Forum
+</a>
+
+<a href="#download">
+    📥 Télécharger
+</a>
+
+<a href="#profil">
+    👤 Profil
+</a>
+
+<button id="mobileLogin">
+    🔐 Connexion
+</button>
+```
+
+</div>
+
+<main>
+
+<div class="page">
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+
+<section class="hero" id="accueil">
+
+```
+<div class="hero-content">
+
+    <div class="status">
+
+        <span class="status-dot"></span>
+
+        <span id="serverStatus">
+            Vérification du serveur...
+        </span>
+
+    </div>
+
+
+    <h1>
+
+        Ton espace.
+
+        <br>
+
+        <span class="gradient">
+            Ta communauté.
+        </span>
+
+    </h1>
+
+
+    <p class="hero-description">
+
+        HUBBOOST rassemble communauté, forum,
+        profil et services dans une plateforme
+        moderne, rapide et accessible partout.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <button
+            class="btn btn-primary"
+            id="heroLogin"
+            type="button"
+        >
+            🚀 Commencer
+        </button>
+
+        <a
+            class="btn"
+            href="#forum"
+        >
+            💬 Explorer le forum
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="hero-orb"></div>
+```
+
+</section>
+
+<!-- ============================================================
+     FEATURES
+============================================================ -->
+
+<section
+    class="section"
+    id="fonctionnalites"
+>
+
+```
+<div class="section-header">
+
+    <h2>
+        Tout au même endroit.
+    </h2>
+
+    <p>
+        Une interface conçue pour HUBBOOST.
+    </p>
+
+</div>
+
+
+<div class="grid">
+
+    <article class="card">
+
+        <div class="card-icon">
+            🔐
         </div>
 
-
-        <nav
-            style="
-                display:flex;
-                gap:18px;
-                align-items:center;
-                flex-wrap:wrap;
-            "
-        >
-
-            <a
-                href="#optimizations"
-                style="color:inherit;text-decoration:none;"
-            >
-                Optimisations
-            </a>
-
-            <a
-                href="#community"
-                style="color:inherit;text-decoration:none;"
-            >
-                Communauté
-            </a>
-
-            <a
-                href="#support"
-                style="color:inherit;text-decoration:none;"
-            >
-                Support
-            </a>
-
-        </nav>
-
-
-        <div
-            style="
-                display:flex;
-                align-items:center;
-                gap:15px;
-                flex-wrap:wrap;
-            "
-        >
-
-            <div class="status">
-
-                <span class="status-dot"></span>
-
-                SYSTÈME EN LIGNE
-
-            </div>
-
-
-            <button
-                id="openAccount"
-                class="button-secondary"
-                type="button"
-            >
-                👤 Connexion
-            </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
-
-    <section class="hero">
-
-        <h1>
-            BOOST
-            <span>YOUR PC.</span>
-        </h1>
-
+        <h3>
+            Connexion sécurisée
+        </h3>
 
         <p>
-            HUBBOOST rassemble 500 actions Windows pour
-            améliorer, diagnostiquer et maintenir votre PC :
-            système, CPU, RAM, GPU, gaming, réseau,
-            stockage, sécurité et maintenance.
+            Connecte ton compte avec les
+            fournisseurs OAuth disponibles.
         </p>
 
-
-        <div
-            style="
-                display:flex;
-                flex-wrap:wrap;
-                gap:12px;
-                margin-top:25px;
-            "
-        >
-
-            <a
-                href="HUBBOOST.bat"
-                class="button"
-                download="HUBBOOST.bat"
-            >
-                ⬇ Télécharger HUBBOOST
-            </a>
+    </article>
 
 
-            <a
-                href="HUBBOOST-500-CATALOGUE.txt"
-                class="button button-secondary"
-                download
-            >
-                📋 Catalogue 500 actions
-            </a>
+    <article class="card">
 
-
-            <button
-                id="openSystem"
-                class="button-secondary"
-                type="button"
-            >
-                🖥️ Mon système
-            </button>
-
+        <div class="card-icon">
+            💬
         </div>
 
-    </section>
+        <h3>
+            Forum
+        </h3>
+
+        <p>
+            Discute avec la communauté,
+            partage tes idées et découvre
+            les nouveautés.
+        </p>
+
+    </article>
 
 
-    <!-- =====================================================
-         STATS
-         ===================================================== -->
+    <article class="card">
 
-    <section>
-
-        <div class="stats">
-
-            <div class="stat">
-                <div class="stat-label">Système</div>
-
-                <div
-                    id="systemOS"
-                    class="stat-value"
-                >
-                    Windows
-                </div>
-            </div>
-
-
-            <div class="stat">
-                <div class="stat-label">Optimisations</div>
-
-                <div
-                    id="totalOptimizations"
-                    class="stat-value"
-                >
-                    500
-                </div>
-            </div>
-
-
-            <div class="stat">
-                <div class="stat-label">Version</div>
-
-                <div
-                    id="hubVersion"
-                    class="stat-value"
-                >
-                    1.0
-                </div>
-            </div>
-
-
-            <div class="stat">
-                <div class="stat-label">Statut</div>
-
-                <div
-                    id="systemStatus"
-                    class="stat-value"
-                >
-                    OK
-                </div>
-            </div>
-
+        <div class="card-icon">
+            👤
         </div>
 
-    </section>
+        <h3>
+            Profil
+        </h3>
+
+        <p>
+            Retrouve ton compte, ton nom
+            d'utilisateur et ta photo de profil.
+        </p>
+
+    </article>
 
 
-    <!-- =====================================================
-         DOWNLOAD CENTER
-         ===================================================== -->
+    <article class="card">
 
-    <section
-        class="optimization-card"
-        style="margin-bottom:16px;"
-    >
+        <div class="card-icon">
+            ⚡
+        </div>
 
-        <div class="card-header">
+        <h3>
+            Rapide
+        </h3>
 
-            <div>
+        <p>
+            Frontend hébergé sur GitHub Pages
+            et API HUBBOOST sur Render.
+        </p>
 
-                <div class="card-category">
-                    DOWNLOAD CENTER
-                </div>
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-icon">
+            🌐
+        </div>
+
+        <h3>
+            Accessible partout
+        </h3>
+
+        <p>
+            Utilise HUBBOOST depuis ordinateur,
+            tablette ou téléphone.
+        </p>
+
+    </article>
+
+
+    <article class="card">
+
+        <div class="card-icon">
+            🚀
+        </div>
+
+        <h3>
+            Application Windows
+        </h3>
+
+        <p>
+            Télécharge également la version
+            Windows de HUBBOOST.
+        </p>
+
+    </article>
+
+</div>
+```
+
+</section>
+
+<!-- ============================================================
+     FORUM
+============================================================ -->
+
+<section
+    class="section"
+    id="forum"
+>
+
+```
+<div class="section-header">
+
+    <h2>
+        Forum HUBBOOST
+    </h2>
+
+    <p>
+        Les espaces principaux de la communauté.
+    </p>
+
+</div>
+
+
+<div class="forum">
+
+    <div class="forum-list">
+
+        <a href="#" class="forum-item">
+
+            <div class="forum-icon">
+                📢
+            </div>
+
+            <div class="forum-info">
 
                 <h3>
-                    📥 Centre de téléchargement
+                    Annonces
                 </h3>
 
+                <p>
+                    Les nouvelles de HUBBOOST
+                </p>
+
             </div>
 
-            <div class="card-number">
-                HUB
+            <span class="forum-count">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="#" class="forum-item">
+
+            <div class="forum-icon">
+                💡
             </div>
 
-        </div>
-
-
-        <p>
-            Télécharge le programme HUBBOOST et son catalogue.
-            Le fichier BAT s'exécute directement sur Windows.
-        </p>
-
-
-        <div
-            style="
-                display:flex;
-                flex-wrap:wrap;
-                gap:10px;
-                margin-top:20px;
-            "
-        >
-
-            <a
-                href="HUBBOOST.bat"
-                download="HUBBOOST.bat"
-                class="button"
-            >
-                ⬇ HUBBOOST.bat
-            </a>
-
-
-            <a
-                href="HUBBOOST-500-CATALOGUE.txt"
-                download
-                class="button button-secondary"
-            >
-                📋 Catalogue
-            </a>
-
-
-            <button
-                id="checkDownload"
-                class="button-secondary"
-                type="button"
-            >
-                🔍 Vérifier les fichiers
-            </button>
-
-        </div>
-
-
-        <div
-            id="downloadStatus"
-            style="
-                margin-top:15px;
-                color:#8ca996;
-                font-size:13px;
-            "
-        >
-            Prêt à télécharger.
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         COMPATIBILITY
-         ===================================================== -->
-
-    <section
-        class="optimization-card"
-        style="margin-bottom:16px;"
-    >
-
-        <div class="card-header">
-
-            <div>
-
-                <div class="card-category">
-                    COMPATIBILITÉ
-                </div>
+            <div class="forum-info">
 
                 <h3>
-                    🛡️ Support système
+                    Discussions
                 </h3>
 
+                <p>
+                    Discute avec la communauté
+                </p>
+
             </div>
 
-            <div class="card-number">
-                OS
+            <span class="forum-count">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="#" class="forum-item">
+
+            <div class="forum-icon">
+                🛠️
             </div>
 
-        </div>
+            <div class="forum-info">
 
+                <h3>
+                    Support
+                </h3>
+
+                <p>
+                    Besoin d'aide avec HUBBOOST ?
+                </p>
+
+            </div>
+
+            <span class="forum-count">
+                →
+            </span>
+
+        </a>
+
+
+        <a href="#" class="forum-item">
+
+            <div class="forum-icon">
+                💻
+            </div>
+
+            <div class="forum-info">
+
+                <h3>
+                    Développement
+                </h3>
+
+                <p>
+                    Projets et développement
+                </p>
+
+            </div>
+
+            <span class="forum-count">
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <aside class="forum-side">
+
+        <h3>
+            Rejoindre HUBBOOST
+        </h3>
 
         <p>
-            HUBBOOST est conçu principalement pour les versions
-            modernes de Windows. Certaines opérations peuvent
-            demander les droits administrateur.
+            Connecte-toi pour accéder à ton
+            espace personnel et aux fonctions
+            communautaires.
         </p>
 
-
-        <div
-            style="
-                display:flex;
-                flex-wrap:wrap;
-                gap:8px;
-                margin-top:18px;
-            "
+        <button
+            class="btn btn-primary"
+            id="forumLogin"
+            type="button"
         >
+            🔐 Se connecter
+        </button>
 
-            <span class="category active">
-                Windows 11
-            </span>
+    </aside>
 
-            <span class="category">
-                Windows 10
-            </span>
+</div>
+```
 
-            <span class="category">
-                PowerShell
-            </span>
+</section>
 
-            <span class="category">
-                CMD
-            </span>
+<!-- ============================================================
+     DOWNLOAD
+============================================================ -->
 
-        </div>
+<section
+    class="section"
+    id="download"
+>
 
-    </section>
+```
+<div class="download-box">
+
+    <h2>
+        📥 HUBBOOST pour Windows
+    </h2>
+
+    <p>
+        Télécharge l'application HUBBOOST
+        pour Windows directement depuis
+        les releases du projet.
+    </p>
+
+    <a
+        class="btn btn-primary"
+        href="https://github.com/anormadaise2-ops/HUBBOOST/releases/latest/download/HUBBOOST.exe"
+    >
+        ⬇️ Télécharger HUBBOOST.exe
+    </a>
+
+</div>
+```
+
+</section>
+
+<!-- ============================================================
+     PROFILE
+============================================================ -->
+
+<section
+    class="section"
+    id="profil"
+>
+
+```
+<div class="section-header">
+
+    <h2>
+        Ton profil
+    </h2>
+
+    <p>
+        Gère ton espace HUBBOOST.
+    </p>
+
+</div>
 
 
-    <!-- =====================================================
-         OPTIMIZATIONS
-         ===================================================== -->
+<div class="profile-card">
 
-    <section id="optimizations">
+    <div class="profile-top">
 
-        <div class="search-container">
+        <div class="avatar-wrap">
+
+            <img
+                id="profileAvatar"
+                class="avatar"
+                alt="Photo de profil"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23111628'/%3E%3Ccircle cx='100' cy='80' r='38' fill='%237657ff'/%3E%3Cpath d='M35 180c10-45 120-45 130 0' fill='%2300c8ff'/%3E%3C/svg%3E"
+            >
+
+            <button
+                class="avatar-edit"
+                id="avatarEdit"
+                type="button"
+                aria-label="Changer la photo"
+            >
+                ✎
+            </button>
 
             <input
-                id="searchInput"
-                class="search"
-                type="search"
-                placeholder="🔎 Rechercher parmi les 500 optimisations..."
-                autocomplete="off"
-                spellcheck="false"
+                id="avatarInput"
+                type="file"
+                accept="image/png,image/jpeg,image/webp"
             >
-
-
-            <button
-                id="clearSearch"
-                class="button-secondary"
-                type="button"
-            >
-                Effacer
-            </button>
 
         </div>
 
-    </section>
 
+        <div>
 
-    <!-- =====================================================
-         CATEGORIES
-         ===================================================== -->
-
-    <section>
-
-        <div class="categories">
-
-            <button
-                class="category active"
-                data-category="all"
-                type="button"
+            <div
+                class="profile-name"
+                id="profileName"
             >
-                Toutes
-            </button>
-
-            <button
-                class="category"
-                data-category="SYSTEME"
-                type="button"
-            >
-                🖥️ Système
-            </button>
-
-            <button
-                class="category"
-                data-category="CPU_RAM"
-                type="button"
-            >
-                🧠 CPU / RAM
-            </button>
-
-            <button
-                class="category"
-                data-category="GPU"
-                type="button"
-            >
-                🎮 GPU
-            </button>
-
-            <button
-                class="category"
-                data-category="GAMING"
-                type="button"
-            >
-                ⚡ Gaming
-            </button>
-
-            <button
-                class="category"
-                data-category="RESEAU"
-                type="button"
-            >
-                🌐 Réseau
-            </button>
-
-            <button
-                class="category"
-                data-category="STOCKAGE"
-                type="button"
-            >
-                💾 Stockage
-            </button>
-
-            <button
-                class="category"
-                data-category="MAINTENANCE"
-                type="button"
-            >
-                🔧 Maintenance
-            </button>
-
-            <button
-                class="category"
-                data-category="SECURITE"
-                type="button"
-            >
-                🛡️ Sécurité
-            </button>
-
-            <button
-                class="category"
-                data-category="OUTILS"
-                type="button"
-            >
-                🧰 Outils
-            </button>
-
-            <button
-                class="category"
-                data-category="PARAMETRES"
-                type="button"
-            >
-                ⚙️ Paramètres
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         STATISTICS
-         ===================================================== -->
-
-    <section>
-
-        <div class="stats">
-
-            <div class="stat">
-                <div class="stat-label">Total</div>
-
-                <div
-                    id="countTotal"
-                    class="stat-value"
-                >
-                    500
-                </div>
-            </div>
-
-
-            <div class="stat">
-                <div class="stat-label">Affichées</div>
-
-                <div
-                    id="countVisible"
-                    class="stat-value"
-                >
-                    500
-                </div>
-            </div>
-
-
-            <div class="stat">
-                <div class="stat-label">Catégorie</div>
-
-                <div
-                    id="currentCategory"
-                    class="stat-value"
-                    style="font-size:18px;"
-                >
-                    Toutes
-                </div>
-            </div>
-
-
-            <div class="stat">
-                <div class="stat-label">Version</div>
-
-                <div class="stat-value">
-                    1.0
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         OPTIMIZATIONS GRID
-         ===================================================== -->
-
-    <section>
-
-        <div
-            id="optimizationGrid"
-            class="optimizations"
-        ></div>
-
-
-        <div
-            id="emptyState"
-            class="empty"
-            style="display:none;"
-        >
-
-            <h3>
-                🔎 Aucune optimisation trouvée
-            </h3>
-
-            <p>
-                Essaie une autre recherche ou une autre catégorie.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PROGRESS
-         ===================================================== -->
-
-    <section
-        class="optimization-card"
-        style="margin-top:30px;"
-    >
-
-        <div class="card-header">
-
-            <div>
-
-                <div class="card-category">
-                    PROGRESSION
-                </div>
-
-                <h3>
-                    ⚡ Optimisations exécutées
-                </h3>
-
+                Visiteur
             </div>
 
             <div
-                id="progressPercent"
-                class="card-number"
+                class="profile-provider"
+                id="profileProvider"
             >
-                0%
-            </div>
-
-        </div>
-
-
-        <div class="progress">
-
-            <div
-                id="progressBar"
-                class="progress-bar"
-            ></div>
-
-        </div>
-
-
-        <p id="progressText">
-            Aucune optimisation exécutée pendant cette session.
-        </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         TERMINAL
-         ===================================================== -->
-
-    <section style="margin-top:30px;">
-
-        <div class="optimization-card">
-
-            <div class="card-header">
-
-                <div>
-
-                    <div class="card-category">
-                        HUBBOOST TERMINAL
-                    </div>
-
-                    <h3>
-                        💻 Console
-                    </h3>
-
-                </div>
-
-                <div class="card-number">
-                    CMD
-                </div>
-
-            </div>
-
-
-            <div
-                id="terminal"
-                class="terminal"
-            >
-
-                <div class="terminal-line">
-                    <span class="terminal-prompt">
-                        HUBBOOST&gt;
-                    </span>
-                    Initialisation...
-                </div>
-
-                <div class="terminal-line">
-                    Chargement du moteur HUBBOOST...
-                </div>
-
-                <div class="terminal-line">
-                    500 optimisations disponibles.
-                </div>
-
-                <div class="terminal-line">
-                    Système prêt.
-                </div>
-
-                <div class="terminal-line">
-                    En attente d'une action...
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         COMMUNITY / FORUM
-         ===================================================== -->
-
-    <section
-        id="community"
-        style="margin-top:30px;"
-    >
-
-        <div class="optimization-card">
-
-            <div class="card-header">
-
-                <div>
-
-                    <div class="card-category">
-                        HUBBOOST COMMUNITY
-                    </div>
-
-                    <h3>
-                        💬 Forum communautaire
-                    </h3>
-
-                </div>
-
-                <div
-                    id="forumStatus"
-                    class="card-number"
-                >
-                    ONLINE
-                </div>
-
-            </div>
-
-
-            <p>
-                Discute avec la communauté HUBBOOST, partage tes
-                optimisations, demande de l'aide ou présente ton PC.
-            </p>
-
-
-            <!-- ACCOUNT -->
-
-            <div
-                id="accountBar"
-                style="
-                    display:flex;
-                    align-items:center;
-                    justify-content:space-between;
-                    gap:15px;
-                    flex-wrap:wrap;
-                    margin-top:20px;
-                    padding:15px;
-                    border:1px solid rgba(255,255,255,.08);
-                    border-radius:12px;
-                "
-            >
-
-                <div
-                    id="accountInfo"
-                    style="color:#8ca996;"
-                >
-                    Connecte-toi pour participer au forum.
-                </div>
-
-
-                <button
-                    id="forumLogin"
-                    class="button"
-                    type="button"
-                >
-                    🔐 Se connecter
-                </button>
-
-            </div>
-
-
-            <!-- FORUM SEARCH -->
-
-            <div
-                style="
-                    display:flex;
-                    gap:10px;
-                    flex-wrap:wrap;
-                    margin-top:20px;
-                "
-            >
-
-                <input
-                    id="forumSearch"
-                    class="search"
-                    type="search"
-                    placeholder="🔎 Rechercher une discussion..."
-                    style="flex:1;min-width:220px;"
-                >
-
-
-                <button
-                    id="refreshForum"
-                    class="button-secondary"
-                    type="button"
-                >
-                    🔄 Actualiser
-                </button>
-
-
-                <button
-                    id="newTopic"
-                    class="button"
-                    type="button"
-                >
-                    ✚ Nouveau sujet
-                </button>
-
-            </div>
-
-
-            <!-- FORUM CATEGORIES -->
-
-            <div
-                id="forumCategories"
-                class="categories"
-                style="margin-top:15px;"
-            >
-
-                <button
-                    class="category active forum-category"
-                    data-forum-category=""
-                    type="button"
-                >
-                    Toutes
-                </button>
-
-                <button
-                    class="category forum-category"
-                    data-forum-category="general"
-                    type="button"
-                >
-                    💬 Général
-                </button>
-
-                <button
-                    class="category forum-category"
-                    data-forum-category="gaming"
-                    type="button"
-                >
-                    🎮 Gaming
-                </button>
-
-                <button
-                    class="category forum-category"
-                    data-forum-category="windows"
-                    type="button"
-                >
-                    🪟 Windows
-                </button>
-
-                <button
-                    class="category forum-category"
-                    data-forum-category="hardware"
-                    type="button"
-                >
-                    🖥️ Hardware
-                </button>
-
-                <button
-                    class="category forum-category"
-                    data-forum-category="help"
-                    type="button"
-                >
-                    🆘 Aide
-                </button>
-
-                <button
-                    class="category forum-category"
-                    data-forum-category="showcase"
-                    type="button"
-                >
-                    🚀 Showcase
-                </button>
-
-            </div>
-
-
-            <!-- FORUM LIST -->
-
-            <div
-                id="forumList"
-                style="margin-top:20px;"
-            >
-
-                <div
-                    class="terminal"
-                    id="forumLoading"
-                >
-                    Chargement des discussions...
-                </div>
-
-            </div>
-
-
-            <!-- PAGINATION -->
-
-            <div
-                id="forumPagination"
-                style="
-                    display:flex;
-                    justify-content:center;
-                    gap:10px;
-                    flex-wrap:wrap;
-                    margin-top:20px;
-                "
-            ></div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SUPPORT
-         ===================================================== -->
-
-    <section
-        id="support"
-        style="margin-top:30px;"
-    >
-
-        <div class="optimization-card">
-
-            <div class="card-header">
-
-                <div>
-
-                    <div class="card-category">
-                        SUPPORT
-                    </div>
-
-                    <h3>
-                        🛠️ Besoin d'aide ?
-                    </h3>
-
-                </div>
-
-                <div class="card-number">
-                    HELP
-                </div>
-
-            </div>
-
-
-            <p>
-                Un problème avec HUBBOOST ? Contacte le support
-                et décris précisément le problème rencontré.
-            </p>
-
-
-            <form
-                id="supportForm"
-                style="margin-top:20px;"
-            >
-
-                <div
-                    style="
-                        display:grid;
-                        grid-template-columns:
-                            repeat(2, minmax(0, 1fr));
-                        gap:12px;
-                    "
-                >
-
-                    <input
-                        id="supportName"
-                        class="search"
-                        type="text"
-                        placeholder="Ton pseudo"
-                        maxlength="60"
-                    >
-
-
-                    <input
-                        id="supportEmail"
-                        class="search"
-                        type="email"
-                        placeholder="Ton e-mail"
-                        maxlength="150"
-                    >
-
-                </div>
-
-
-                <input
-                    id="supportSubject"
-                    class="search"
-                    type="text"
-                    placeholder="Sujet du problème"
-                    maxlength="120"
-                    style="margin-top:12px;width:100%;"
-                    required
-                >
-
-
-                <textarea
-                    id="supportMessage"
-                    class="search"
-                    placeholder="Décris ton problème..."
-                    maxlength="3000"
-                    required
-                    style="
-                        width:100%;
-                        min-height:150px;
-                        padding-top:15px;
-                        resize:vertical;
-                        margin-top:12px;
-                    "
-                ></textarea>
-
-
-                <div
-                    style="
-                        display:flex;
-                        gap:10px;
-                        flex-wrap:wrap;
-                        margin-top:15px;
-                    "
-                >
-
-                    <button type="submit">
-                        📩 Envoyer au support
-                    </button>
-
-
-                    <button
-                        id="resetSupport"
-                        type="reset"
-                        class="button-secondary"
-                    >
-                        Effacer
-                    </button>
-
-                </div>
-
-            </form>
-
-
-            <div
-                id="supportResult"
-                style="
-                    display:none;
-                    margin-top:15px;
-                "
-                class="terminal"
-            ></div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FAQ
-         ===================================================== -->
-
-    <section style="margin-top:30px;">
-
-        <div class="optimization-card">
-
-            <div class="card-header">
-
-                <div>
-
-                    <div class="card-category">
-                        FAQ
-                    </div>
-
-                    <h3>
-                        ❓ Questions fréquentes
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <details>
-
-                <summary>
-                    HUBBOOST est-il gratuit ?
-                </summary>
-
-                <p style="margin-top:10px;">
-                    Oui. Le téléchargement du script HUBBOOST
-                    peut être proposé gratuitement.
-                </p>
-
-            </details>
-
-
-            <details style="margin-top:15px;">
-
-                <summary>
-                    Est-ce que HUBBOOST garantit plus de FPS ?
-                </summary>
-
-                <p style="margin-top:10px;">
-                    Non. Les performances dépendent du matériel,
-                    des pilotes, des jeux et de la configuration
-                    Windows.
-                </p>
-
-            </details>
-
-
-            <details style="margin-top:15px;">
-
-                <summary>
-                    Comment fonctionne le forum ?
-                </summary>
-
-                <p style="margin-top:10px;">
-                    La lecture du forum est publique. Pour créer
-                    un sujet ou répondre, connecte-toi avec GitHub
-                    ou Discord.
-                </p>
-
-            </details>
-
-
-            <details style="margin-top:15px;">
-
-                <summary>
-                    Certaines actions demandent-elles
-                    l'administrateur ?
-                </summary>
-
-                <p style="margin-top:10px;">
-                    Oui. Certaines commandes Windows nécessitent
-                    des privilèges administrateur.
-                </p>
-
-            </details>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         ADMIN
-         ===================================================== -->
-
-    <section
-        id="admin"
-        style="margin-top:30px;"
-    >
-
-        <div class="optimization-card">
-
-            <div class="card-header">
-
-                <div>
-
-                    <div class="card-category">
-                        ADMINISTRATION
-                    </div>
-
-                    <h3>
-                        🔐 Espace administrateur
-                    </h3>
-
-                </div>
-
-                <div class="card-number">
-                    ADMIN
-                </div>
-
-            </div>
-
-
-            <p>
-                L'espace administrateur est réservé à la gestion
-                du support, des statistiques et des journaux.
-            </p>
-
-
-            <button
-                id="openAdmin"
-                type="button"
-                style="margin-top:18px;"
-            >
-                🔐 Ouvrir l'administration
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PRIVACY
-         ===================================================== -->
-
-    <section style="margin-top:30px;">
-
-        <div class="optimization-card">
-
-            <div class="card-header">
-
-                <div>
-
-                    <div class="card-category">
-                        CONFIDENTIALITÉ
-                    </div>
-
-                    <h3>
-                        🔒 Données et journaux
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <p>
-                Le serveur peut enregistrer certaines informations
-                techniques nécessaires à la sécurité, au support
-                et aux statistiques du service.
-            </p>
-
-
-            <p style="margin-top:10px;">
-                Les données doivent être conservées pendant une
-                durée limitée et utilisées uniquement pour leur
-                finalité prévue.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer class="footer">
-
-        <p>
-            <strong>HUBBOOST</strong>
-            — Windows Optimizer
-        </p>
-
-
-        <p style="margin-top:8px;">
-
-            <a
-                href="#community"
-                style="color:inherit;"
-            >
-                Communauté
-            </a>
-
-            &nbsp;•&nbsp;
-
-            <a
-                href="#support"
-                style="color:inherit;"
-            >
-                Support
-            </a>
-
-            &nbsp;•&nbsp;
-
-            <a
-                href="#admin"
-                style="color:inherit;"
-            >
-                Administration
-            </a>
-
-            &nbsp;•&nbsp;
-
-            <a
-                href="#"
-                id="privacyLink"
-                style="color:inherit;"
-            >
-                Confidentialité
-            </a>
-
-        </p>
-
-
-        <p style="margin-top:8px;">
-            HUBBOOST © 2026
-        </p>
-
-    </footer>
-
-</div>
-
-
-<!-- =========================================================
-     OPTIMIZATION MODAL
-     ========================================================= -->
-
-<div
-    id="optimizationModal"
-    class="modal"
-    aria-hidden="true"
->
-
-    <div class="modal-content">
-
-        <div class="modal-header">
-
-            <div>
-
-                <div
-                    id="modalCategory"
-                    class="card-category"
-                >
-                    SYSTÈME
-                </div>
-
-                <h2 id="modalTitle">
-                    Optimisation
-                </h2>
-
-            </div>
-
-
-            <button
-                id="closeModal"
-                class="modal-close"
-                type="button"
-            >
-                ✕
-            </button>
-
-        </div>
-
-
-        <p id="modalDescription">
-            Description de l'optimisation.
-        </p>
-
-
-        <div style="margin-top:22px;">
-
-            <div class="card-category">
-                COMMANDE
-            </div>
-
-
-            <div
-                id="modalCommand"
-                class="terminal"
-                style="margin-top:8px;"
-            >
-                —
-            </div>
-
-        </div>
-
-
-        <div
-            style="
-                display:flex;
-                gap:10px;
-                flex-wrap:wrap;
-                margin-top:22px;
-            "
-        >
-
-            <button
-                id="copyCommand"
-                type="button"
-            >
-                📋 Copier
-            </button>
-
-
-            <button
-                id="runOptimization"
-                class="button-secondary"
-                type="button"
-            >
-                ▶ Exécuter
-            </button>
-
-
-            <button
-                id="modalDownload"
-                class="button-secondary"
-                type="button"
-            >
-                📥 Télécharger BAT
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     SYSTEM MODAL
-     ========================================================= -->
-
-<div
-    id="systemModal"
-    class="modal"
-    aria-hidden="true"
->
-
-    <div class="modal-content">
-
-        <div class="modal-header">
-
-            <div>
-
-                <div class="card-category">
-                    SYSTÈME
-                </div>
-
-                <h2>
-                    🖥️ Informations système
-                </h2>
-
-            </div>
-
-
-            <button
-                id="closeSystem"
-                class="modal-close"
-                type="button"
-            >
-                ✕
-            </button>
-
-        </div>
-
-
-        <div class="terminal">
-
-            <div class="terminal-line">
-                OS :
-                <span id="detailOS">
-                    Détection...
-                </span>
-            </div>
-
-
-            <div class="terminal-line">
-                Navigateur :
-                <span id="detailBrowser">
-                    Détection...
-                </span>
-            </div>
-
-
-            <div class="terminal-line">
-                Langue :
-                <span id="detailLanguage">
-                    Détection...
-                </span>
-            </div>
-
-
-            <div class="terminal-line">
-                Plateforme :
-                <span id="detailPlatform">
-                    Détection...
-                </span>
-            </div>
-
-
-            <div class="terminal-line">
-                Écran :
-                <span id="detailScreen">
-                    Détection...
-                </span>
+                Non connecté
             </div>
 
         </div>
 
     </div>
 
+
+    <div class="profile-actions">
+
+        <button
+            class="btn btn-primary"
+            id="profileLogin"
+            type="button"
+        >
+            🔐 Connexion
+        </button>
+
+        <button
+            class="btn btn-danger"
+            id="logoutButton"
+            type="button"
+            hidden
+        >
+            Déconnexion
+        </button>
+
+    </div>
+
+</div>
+```
+
+</section>
+
 </div>
 
+</main>
 
-<!-- =========================================================
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer>
+
+```
+<div class="page">
+
+    HUBBOOST © 2026
+
+    <br>
+
+    Community platform
+
+</div>
+```
+
+</footer>
+
+<!-- ============================================================
      AUTH MODAL
-     ========================================================= -->
+============================================================ -->
 
 <div
-    id="accountModal"
     class="modal"
-    aria-hidden="true"
+    id="authModal"
 >
 
-    <div class="modal-content">
+```
+<div class="modal-card">
 
-        <div class="modal-header">
+    <div class="modal-header">
 
-            <div>
+        <div>
 
-                <div class="card-category">
-                    HUBBOOST ACCOUNT
-                </div>
+            <h2>
+                Connexion
+            </h2>
 
-                <h2>
-                    👤 Ton compte
-                </h2>
-
-            </div>
-
-
-            <button
-                id="closeAccount"
-                class="modal-close"
-                type="button"
+            <p
+                style="
+                    color:#9ca3b8;
+                    margin-top:5px;
+                    font-size:14px;
+                "
             >
-                ✕
-            </button>
-
-        </div>
-
-
-        <!-- NOT CONNECTED -->
-
-        <div id="authLoggedOut">
-
-            <p>
-                Connecte-toi avec ton compte GitHub ou Discord
-                pour participer au forum HUBBOOST.
+                Choisis ton fournisseur.
             </p>
 
-
-            <div
-                style="
-                    display:grid;
-                    gap:12px;
-                    margin-top:22px;
-                "
-            >
-
-                <button
-                    id="loginDiscord"
-                    type="button"
-                    style="width:100%;"
-                >
-                    🎮 Continuer avec Discord
-                </button>
-
-
-                <button
-                    id="loginGithub"
-                    type="button"
-                    class="button-secondary"
-                    style="width:100%;"
-                >
-                    🐙 Continuer avec GitHub
-                </button>
-
-            </div>
-
-
-            <div
-                id="authError"
-                class="terminal"
-                style="
-                    display:none;
-                    margin-top:15px;
-                "
-            ></div>
-
         </div>
 
-
-        <!-- CONNECTED -->
-
-        <div
-            id="authLoggedIn"
-            style="display:none;"
+        <button
+            class="close"
+            id="closeModal"
+            type="button"
         >
-
-            <div
-                style="
-                    display:flex;
-                    align-items:center;
-                    gap:15px;
-                "
-            >
-
-                <img
-                    id="accountAvatar"
-                    src=""
-                    alt="Avatar"
-                    style="
-                        width:64px;
-                        height:64px;
-                        border-radius:50%;
-                        object-fit:cover;
-                        display:none;
-                    "
-                >
-
-
-                <div>
-
-                    <div
-                        id="accountUsername"
-                        style="
-                            font-size:20px;
-                            font-weight:700;
-                        "
-                    >
-                        —
-                    </div>
-
-
-                    <div
-                        id="accountProvider"
-                        style="
-                            margin-top:5px;
-                            opacity:.7;
-                        "
-                    >
-                        —
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <button
-                id="logoutAccount"
-                class="button-secondary"
-                type="button"
-                style="margin-top:20px;"
-            >
-                🚪 Déconnexion
-            </button>
-
-        </div>
+            ✕
+        </button>
 
     </div>
 
-</div>
 
+    <div class="auth-buttons">
 
-<!-- =========================================================
-     NEW TOPIC MODAL
-     ========================================================= -->
-
-<div
-    id="topicModal"
-    class="modal"
-    aria-hidden="true"
->
-
-    <div class="modal-content">
-
-        <div class="modal-header">
-
-            <div>
-
-                <div class="card-category">
-                    COMMUNAUTÉ
-                </div>
-
-                <h2>
-                    ✚ Nouveau sujet
-                </h2>
-
-            </div>
-
-
-            <button
-                id="closeTopic"
-                class="modal-close"
-                type="button"
-            >
-                ✕
-            </button>
-
-        </div>
-
-
-        <form id="topicForm">
-
-            <input
-                id="topicTitle"
-                class="search"
-                type="text"
-                placeholder="Titre du sujet"
-                maxlength="120"
-                required
-                style="
-                    width:100%;
-                    margin-top:20px;
-                "
-            >
-
-
-            <select
-                id="topicCategory"
-                class="search"
-                required
-                style="
-                    width:100%;
-                    margin-top:12px;
-                "
-            >
-
-                <option value="general">
-                    💬 Général
-                </option>
-
-                <option value="gaming">
-                    🎮 Gaming
-                </option>
-
-                <option value="windows">
-                    🪟 Windows
-                </option>
-
-                <option value="hardware">
-                    🖥️ Hardware
-                </option>
-
-                <option value="help">
-                    🆘 Aide
-                </option>
-
-                <option value="showcase">
-                    🚀 Showcase
-                </option>
-
-            </select>
-
-
-            <textarea
-                id="topicContent"
-                class="search"
-                placeholder="Écris ton message..."
-                maxlength="10000"
-                required
-                style="
-                    width:100%;
-                    min-height:200px;
-                    margin-top:12px;
-                    resize:vertical;
-                "
-            ></textarea>
-
-
-            <div
-                style="
-                    display:flex;
-                    gap:10px;
-                    flex-wrap:wrap;
-                    margin-top:15px;
-                "
-            >
-
-                <button type="submit">
-                    🚀 Publier
-                </button>
-
-
-                <button
-                    id="cancelTopic"
-                    class="button-secondary"
-                    type="button"
-                >
-                    Annuler
-                </button>
-
-            </div>
-
-
-            <div
-                id="topicResult"
-                class="terminal"
-                style="
-                    display:none;
-                    margin-top:15px;
-                "
-            ></div>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     POST MODAL
-     ========================================================= -->
-
-<div
-    id="postModal"
-    class="modal"
-    aria-hidden="true"
->
-
-    <div class="modal-content">
-
-        <div class="modal-header">
-
-            <div>
-
-                <div
-                    id="postCategory"
-                    class="card-category"
-                >
-                    GÉNÉRAL
-                </div>
-
-                <h2 id="postTitle">
-                    Discussion
-                </h2>
-
-            </div>
-
-
-            <button
-                id="closePost"
-                class="modal-close"
-                type="button"
-            >
-                ✕
-            </button>
-
-        </div>
-
-
-        <div
-            id="postAuthor"
-            style="
-                margin-top:8px;
-                opacity:.7;
-            "
-        ></div>
-
-
-        <div
-            id="postContent"
-            class="terminal"
-            style="
-                margin-top:18px;
-                white-space:pre-wrap;
-            "
-        ></div>
-
-
-        <div
-            class="card-category"
-            style="margin-top:25px;"
+        <button
+            class="auth-button"
+            id="githubLogin"
+            type="button"
         >
-            RÉPONSES
-        </div>
+            <span>🐙</span>
+            Continuer avec GitHub
+        </button>
 
 
-        <div
-            id="replyList"
-            style="margin-top:10px;"
-        ></div>
-
-
-        <form
-            id="replyForm"
-            style="margin-top:20px;"
+        <button
+            class="auth-button"
+            id="discordLogin"
+            type="button"
         >
-
-            <textarea
-                id="replyContent"
-                class="search"
-                placeholder="Écris une réponse..."
-                maxlength="10000"
-                required
-                style="
-                    width:100%;
-                    min-height:120px;
-                    resize:vertical;
-                "
-            ></textarea>
-
-
-            <button
-                type="submit"
-                style="margin-top:12px;"
-            >
-                💬 Répondre
-            </button>
-
-        </form>
-
-
-        <div
-            id="replyResult"
-            class="terminal"
-            style="
-                display:none;
-                margin-top:12px;
-            "
-        ></div>
+            <span>💬</span>
+            Continuer avec Discord
+        </button>
 
     </div>
 
 </div>
-
-
-<!-- =========================================================
-     ADMIN LOGIN MODAL
-     ========================================================= -->
-
-<div
-    id="adminModal"
-    class="modal"
-    aria-hidden="true"
->
-
-    <div class="modal-content">
-
-        <div class="modal-header">
-
-            <div>
-
-                <div class="card-category">
-                    ADMINISTRATION
-                </div>
-
-                <h2>
-                    🔐 Connexion admin
-                </h2>
-
-            </div>
-
-
-            <button
-                id="closeAdmin"
-                class="modal-close"
-                type="button"
-            >
-                ✕
-            </button>
-
-        </div>
-
-
-        <p>
-            Cette connexion sera vérifiée par le serveur.
-            Aucun mot de passe administrateur ne doit être
-            stocké dans le HTML.
-        </p>
-
-
-        <form
-            id="adminLoginForm"
-            style="margin-top:20px;"
-        >
-
-            <input
-                id="adminEmail"
-                class="search"
-                type="email"
-                placeholder="E-mail administrateur"
-                autocomplete="username"
-                required
-                style="width:100%;"
-            >
-
-
-            <input
-                id="adminPassword"
-                class="search"
-                type="password"
-                placeholder="Mot de passe"
-                autocomplete="current-password"
-                required
-                style="
-                    width:100%;
-                    margin-top:12px;
-                "
-            >
-
-
-            <button
-                type="submit"
-                style="margin-top:15px;"
-            >
-                🔐 Connexion
-            </button>
-
-        </form>
-
-
-        <div
-            id="adminLoginResult"
-            class="terminal"
-            style="
-                display:none;
-                margin-top:15px;
-            "
-        ></div>
-
-    </div>
+```
 
 </div>
 
+<!-- TOAST -->
 
-<!-- =========================================================
-     NOTIFICATION
-     ========================================================= -->
-
-<div
-    id="notification"
-    class="notification"
-    aria-live="polite"
->
-
-    <div
-        id="notificationTitle"
-        class="notification-title"
-    >
-        HUBBOOST
-    </div>
-
-
-    <div
-        id="notificationText"
-        class="notification-text"
-    >
-        —
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     BACKEND CONFIG
-     ========================================================= -->
+<div id="toast"></div>
 
 <script>
 
-    /*
-     * Backend HUBBOOST
-     *
-     * Local :
-     * http://127.0.0.1:5000
-     *
-     * Production :
-     * remplace HUBBOOST_API par ton URL Render.
-     *
-     * Exemple :
-     * window.HUBBOOST_API = "https://hubboost-api.onrender.com";
-     */
+/* ================================================================
+   CONFIGURATION
+================================================================ */
 
-    window.HUBBOOST_API =
-        window.HUBBOOST_API ||
-        "http://127.0.0.1:5000";
+const API_URL =
+    "https://hubboost-backend.onrender.com";
+
+const FRONTEND_URL =
+    window.location.origin;
+
+
+/* ================================================================
+   HELPERS
+================================================================ */
+
+const $ = (selector) =>
+    document.querySelector(selector);
+
+
+function showToast(message) {
+
+    const toast = $("#toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(window.toastTimer);
+
+    window.toastTimer = setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 3500);
+}
+
+
+/* ================================================================
+   AUTH MODAL
+================================================================ */
+
+function openAuth() {
+
+    $("#authModal").classList.add("active");
+
+}
+
+
+function closeAuth() {
+
+    $("#authModal").classList.remove("active");
+
+}
+
+
+$("#loginButton").addEventListener(
+    "click",
+    openAuth
+);
+
+
+$("#heroLogin").addEventListener(
+    "click",
+    openAuth
+);
+
+
+$("#forumLogin").addEventListener(
+    "click",
+    openAuth
+);
+
+
+$("#profileLogin").addEventListener(
+    "click",
+    openAuth
+);
+
+
+$("#mobileLogin").addEventListener(
+    "click",
+    openAuth
+);
+
+
+$("#closeModal").addEventListener(
+    "click",
+    closeAuth
+);
+
+
+$("#authModal").addEventListener(
+    "click",
+    (event) => {
+
+        if (
+            event.target ===
+            $("#authModal")
+        ) {
+            closeAuth();
+        }
+
+    }
+);
+
+
+/* ================================================================
+   OAUTH
+================================================================ */
+
+$("#githubLogin").addEventListener(
+    "click",
+    () => {
+
+        window.location.href =
+            API_URL +
+            "/api/auth/github";
+
+    }
+);
+
+
+$("#discordLogin").addEventListener(
+    "click",
+    () => {
+
+        window.location.href =
+            API_URL +
+            "/api/auth/discord";
+
+    }
+);
+
+
+/* ================================================================
+   AUTH STATUS
+================================================================ */
+
+async function loadUser() {
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL +
+                "/api/auth/me",
+                {
+                    method: "GET",
+                    credentials: "include"
+                }
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                "API error"
+            );
+
+        }
+
+        const data =
+            await response.json();
+
+
+        if (
+            data.authenticated === true ||
+            data.success === true &&
+            data.user
+        ) {
+
+            const user =
+                data.user || data;
+
+
+            const username =
+                user.username ||
+                user.name ||
+                "Utilisateur";
+
+
+            const provider =
+                user.provider ||
+                data.provider ||
+                "HUBBOOST";
+
+
+            $("#profileName")
+                .textContent =
+                username;
+
+
+            $("#profileProvider")
+                .textContent =
+                "Connecté avec " +
+                provider;
+
+
+            $("#loginButton")
+                .textContent =
+                "👤 " + username;
+
+
+            $("#logoutButton")
+                .hidden = false;
+
+
+            $("#profileLogin")
+                .hidden = true;
+
+        } else {
+
+            resetUser();
+
+        }
+
+    } catch (error) {
+
+        console.warn(
+            "Impossible de récupérer la session.",
+            error
+        );
+
+        resetUser();
+
+    }
+
+}
+
+
+function resetUser() {
+
+    $("#profileName")
+        .textContent =
+        "Visiteur";
+
+
+    $("#profileProvider")
+        .textContent =
+        "Non connecté";
+
+
+    $("#loginButton")
+        .textContent =
+        "🔐 Connexion";
+
+
+    $("#logoutButton")
+        .hidden = true;
+
+
+    $("#profileLogin")
+        .hidden = false;
+
+}
+
+
+/* ================================================================
+   LOGOUT
+================================================================ */
+
+$("#logoutButton").addEventListener(
+    "click",
+    async () => {
+
+        try {
+
+            await fetch(
+                API_URL +
+                "/api/auth/logout",
+                {
+                    method: "POST",
+                    credentials: "include"
+                }
+            );
+
+            resetUser();
+
+            showToast(
+                "Déconnexion réussie."
+            );
+
+        } catch {
+
+            showToast(
+                "Impossible de se déconnecter."
+            );
+
+        }
+
+    }
+);
+
+
+/* ================================================================
+   PROFILE IMAGE
+================================================================ */
+
+$("#avatarEdit").addEventListener(
+    "click",
+    () => {
+
+        $("#avatarInput").click();
+
+    }
+);
+
+
+$("#avatarInput").addEventListener(
+    "change",
+    (event) => {
+
+        const file =
+            event.target.files[0];
+
+        if (!file) {
+            return;
+        }
+
+
+        if (!file.type.startsWith("image/")) {
+
+            showToast(
+                "Sélectionne une image."
+            );
+
+            return;
+        }
+
+
+        if (file.size > 5 * 1024 * 1024) {
+
+            showToast(
+                "Image trop grande. Maximum 5 Mo."
+            );
+
+            return;
+        }
+
+
+        const reader =
+            new FileReader();
+
+
+        reader.onload = () => {
+
+            $("#profileAvatar")
+                .src =
+                reader.result;
+
+            showToast(
+                "Photo de profil modifiée."
+            );
+
+        };
+
+
+        reader.readAsDataURL(file);
+
+    }
+);
+
+
+/* ================================================================
+   BACKEND STATUS
+================================================================ */
+
+async function checkServer() {
+
+    const status =
+        $("#serverStatus");
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL +
+                "/api/health",
+                {
+                    method: "GET"
+                }
+            );
+
+
+        if (!response.ok) {
+            throw new Error();
+        }
+
+
+        status.textContent =
+            "Serveur HUBBOOST en ligne";
+
+
+        status.parentElement.style
+            .borderColor =
+            "rgba(55,230,161,.3)";
+
+
+    } catch {
+
+        status.textContent =
+            "Serveur temporairement indisponible";
+
+        status.parentElement.style
+            .borderColor =
+            "rgba(255,85,119,.3)";
+
+    }
+
+}
+
+
+/* ================================================================
+   MOBILE MENU
+================================================================ */
+
+$("#menuButton").addEventListener(
+    "click",
+    () => {
+
+        $("#mobileMenu")
+            .classList
+            .toggle("active");
+
+    }
+);
+
+
+document
+    .querySelectorAll("#mobileMenu a")
+    .forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                $("#mobileMenu")
+                    .classList
+                    .remove("active");
+
+            }
+        );
+
+    });
+
+
+/* ================================================================
+   MOUSE GLOW
+================================================================ */
+
+const mouseGlow =
+    $("#mouseGlow");
+
+
+if (
+    window.matchMedia(
+        "(pointer:fine)"
+    ).matches
+) {
+
+    window.addEventListener(
+        "mousemove",
+        (event) => {
+
+            mouseGlow.style.left =
+                event.clientX + "px";
+
+            mouseGlow.style.top =
+                event.clientY + "px";
+
+        },
+        {
+            passive: true
+        }
+    );
+
+}
+
+
+/* ================================================================
+   PARTICLES
+================================================================ */
+
+const canvas =
+    $("#particles");
+
+const ctx =
+    canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas() {
+
+    canvas.width =
+        window.innerWidth *
+        window.devicePixelRatio;
+
+    canvas.height =
+        window.innerHeight *
+        window.devicePixelRatio;
+
+    ctx.setTransform(
+        window.devicePixelRatio,
+        0,
+        0,
+        window.devicePixelRatio,
+        0,
+        0
+    );
+
+}
+
+
+function createParticles() {
+
+    particles = [];
+
+    const count =
+        Math.min(
+            70,
+            Math.floor(
+                window.innerWidth / 18
+            )
+        );
+
+
+    for (
+        let i = 0;
+        i < count;
+        i++
+    ) {
+
+        particles.push({
+
+            x:
+                Math.random() *
+                window.innerWidth,
+
+            y:
+                Math.random() *
+                window.innerHeight,
+
+            size:
+                Math.random() *
+                1.8 + .5,
+
+            speed:
+                Math.random() *
+                .25 + .05,
+
+            alpha:
+                Math.random() *
+                .5 + .1
+
+        });
+
+    }
+
+}
+
+
+function animateParticles() {
+
+    ctx.clearRect(
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+    );
+
+
+    for (const particle of particles) {
+
+        particle.y -=
+            particle.speed;
+
+
+        if (particle.y < -5) {
+
+            particle.y =
+                window.innerHeight + 5;
+
+        }
+
+
+        ctx.beginPath();
+
+        ctx.arc(
+            particle.x,
+            particle.y,
+            particle.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `rgba(130,140,255,${particle.alpha})`;
+
+        ctx.fill();
+
+    }
+
+
+    requestAnimationFrame(
+        animateParticles
+    );
+
+}
+
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        resizeCanvas();
+        createParticles();
+
+    }
+);
+
+
+resizeCanvas();
+createParticles();
+animateParticles();
+
+
+/* ================================================================
+   INIT
+================================================================ */
+
+checkServer();
+loadUser();
 
 </script>
 
-
-<!-- =========================================================
-     MAIN JAVASCRIPT
-     ========================================================= -->
-
-<script src="app.js"></script>
-
 </body>
-
 </html>
