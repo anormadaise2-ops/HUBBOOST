@@ -1,0 +1,301 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HUBBOOST — Windows Performance Toolkit</title>
+
+<meta name="description"
+content="HUBBOOST — toolkit Windows de diagnostic, performance, gaming, réseau, stockage et sécurité avec 500 outils.">
+
+<meta name="author" content="Karl David">
+
+<meta name="theme-color" content="#05070d">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<div class="orb orb-one"></div>
+<div class="orb orb-two"></div>
+<div class="orb orb-three"></div>
+
+<header class="navbar">
+
+    <a class="brand" href="#">
+        <span class="brand-mark">H</span>
+        <span>
+            <strong>HUBBOOST</strong>
+            <small>WINDOWS TOOLKIT</small>
+        </span>
+    </a>
+
+    <nav>
+        <a href="#features">Fonctions</a>
+        <a href="#catalog">Catalogue</a>
+        <a href="#download">Télécharger</a>
+    </nav>
+
+    <a class="nav-download" href="downloads/HUBBOOST.bat" download>
+        Télécharger
+    </a>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-content reveal">
+
+        <div class="status">
+            <span></span>
+            SYSTEM READY
+        </div>
+
+        <h1>
+            BOOST.
+            <span>DIAGNOSE.</span>
+            CONTROL.
+        </h1>
+
+        <p class="hero-description">
+            HUBBOOST est un toolkit Windows interactif réunissant
+            <strong>500 outils</strong> pour analyser ton PC,
+            le gaming, les performances, le réseau, le stockage
+            et la sécurité.
+        </p>
+
+        <div class="hero-actions">
+
+            <a class="btn primary" href="downloads/HUBBOOST.bat" download>
+                Télécharger HUBBOOST.bat
+                <span>→</span>
+            </a>
+
+            <a class="btn secondary" href="#catalog">
+                Explorer les 500 outils
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div>
+                <strong data-counter="500">0</strong>
+                <span>OUTILS</span>
+            </div>
+
+            <div>
+                <strong data-counter="20">0</strong>
+                <span>CATÉGORIES</span>
+            </div>
+
+            <div>
+                <strong>WIN</strong>
+                <span>PLATFORM</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-terminal reveal">
+
+        <div class="terminal-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <label>HUBBOOST.exe</label>
+        </div>
+
+        <div class="terminal-body">
+
+            <p class="terminal-green">HUBBOOST SYSTEM INITIALIZED</p>
+
+            <p>
+                &gt; Loading Windows toolkit...
+            </p>
+
+            <p>
+                &gt; Modules:
+                <span>500</span>
+            </p>
+
+            <p>
+                &gt; Diagnostics:
+                <span>READY</span>
+            </p>
+
+            <p>
+                &gt; Gaming:
+                <span>READY</span>
+            </p>
+
+            <p>
+                &gt; Network:
+                <span>READY</span>
+            </p>
+
+            <p>
+                &gt; Security:
+                <span>READY</span>
+            </p>
+
+            <div class="terminal-cursor"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="features" class="section">
+
+    <div class="section-heading reveal">
+
+        <div class="eyebrow">01 / CAPABILITIES</div>
+
+        <h2>
+            Tout ton système.
+            <span>Une seule interface.</span>
+        </h2>
+
+        <p>
+            HUBBOOST organise les diagnostics et outils Windows
+            dans un catalogue simple à utiliser.
+        </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <article class="feature-card reveal">
+            <div class="feature-number">01</div>
+            <h3>Performance</h3>
+            <p>
+                CPU, RAM, processus, services et performances
+                système.
+            </p>
+        </article>
+
+        <article class="feature-card reveal">
+            <div class="feature-number">02</div>
+            <h3>Gaming</h3>
+            <p>
+                GPU, affichage, fréquence, DirectX et configuration
+                graphique.
+            </p>
+        </article>
+
+        <article class="feature-card reveal">
+            <div class="feature-number">03</div>
+            <h3>Network</h3>
+            <p>
+                IP, DNS, Wi-Fi, Ethernet, routes et connexions.
+            </p>
+        </article>
+
+        <article class="feature-card reveal">
+            <div class="feature-number">04</div>
+            <h3>Security</h3>
+            <p>
+                Defender, pare-feu, profils réseau et diagnostics.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+<section id="catalog" class="section catalog-section">
+
+    <div class="section-heading reveal">
+
+        <div class="eyebrow">02 / CATALOG</div>
+
+        <h2>
+            500 outils.
+            <span>Recherche instantanée.</span>
+        </h2>
+
+    </div>
+
+    <div class="catalog-controls reveal">
+
+        <input
+            id="search"
+            type="search"
+            placeholder="Rechercher un outil..."
+            autocomplete="off"
+        >
+
+        <select id="category">
+            <option value="all">Toutes les catégories</option>
+        </select>
+
+    </div>
+
+    <div class="catalog-info">
+        <span id="resultCount">500 outils</span>
+        <span>HUBBOOST.bat</span>
+    </div>
+
+    <div id="catalogGrid" class="catalog-grid"></div>
+
+</section>
+
+<section id="download" class="download-section">
+
+    <div class="download-panel reveal">
+
+        <div>
+
+            <div class="eyebrow">03 / DOWNLOAD</div>
+
+            <h2>
+                Prêt à lancer
+                <span>HUBBOOST ?</span>
+            </h2>
+
+            <p>
+                Télécharge le fichier BAT et lance HUBBOOST directement
+                depuis Windows.
+            </p>
+
+        </div>
+
+        <a class="btn primary large"
+           href="downloads/HUBBOOST.bat"
+           download>
+            Télécharger HUBBOOST.bat
+            <span>↓</span>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <div>
+        <strong>HUBBOOST</strong>
+        <span>Windows Performance Toolkit</span>
+    </div>
+
+    <div>
+        By Karl David · KarlDavidLabs
+    </div>
+
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
